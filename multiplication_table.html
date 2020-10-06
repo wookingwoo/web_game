@@ -38,6 +38,21 @@
             }
         };
 
+
+        onSubmit2 = (e) => {
+            e.preventDefault();
+
+
+            this.setState({
+                first: Math.ceil(Math.random() * 9),
+                second: Math.ceil(Math.random() * 9),
+                value: '',
+                result: '게임을 다시 시작합니다.',
+            });
+
+
+        };
+
         onChange = (e) => {
             this.setState({value: e.target.value});
         };
@@ -48,7 +63,7 @@
             this.input = c;
         };
 
-// 컨텐츠
+        // 컨텐츠
         render() {
             return (
                 <React.Fragment>
@@ -57,6 +72,11 @@
                         <input ref={this.onRefInput} type="number" value={this.state.value} onChange={this.onChange}/>
                         <button>입력!</button>
                     </form>
+
+                    <form onSubmit={this.onSubmit2}>
+                        <button>게임 다시 시작</button>
+                    </form>
+
                     <div>{this.state.result}</div>
                 </React.Fragment>
             );
