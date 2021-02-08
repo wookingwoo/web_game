@@ -1,27 +1,32 @@
 {
-  "name": "wookingwoo_games",
-  "version": "1.0.0",
-  "description": "web game",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wookingwoo/web_game.git"
-  },
-  "author": "wookingwoo",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/wookingwoo/web_game/issues"
-  },
-  "homepage": "https://github.com/wookingwoo/web_game#readme",
-  "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
-  },
-  "devDependencies": {
-    "webpack": "^5.21.1",
-    "webpack-cli": "^4.5.0"
-  }
+    "name": "wookingwoo_games",
+    "version": "1.0.0",
+    "description": "web game",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wookingwoo/web_game.git"
+    },
+    "author": "wookingwoo",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/wookingwoo/web_game/issues"
+    },
+    "homepage": "https://github.com/wookingwoo/web_game#readme",
+    "dependencies": {
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.13",
+        "@babel/plugin-proposal-class-properties": "^7.12.13",
+        "@babel/preset-env": "^7.12.13",
+        "@babel/preset-react": "^7.12.13",
+        "babel-loader": "^8.2.2",
+        "webpack": "^5.21.1",
+        "webpack-cli": "^4.5.0"
+    }
 }
