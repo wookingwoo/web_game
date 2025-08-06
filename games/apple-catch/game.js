@@ -10,7 +10,7 @@ class AppleCatchGame {
         
         this.gameState = 'start'; // 'start', 'playing', 'gameOver'
         this.score = 0;
-        this.lives = 3;
+        this.lives = 20;
         this.level = 1;
         
         this.basket = {
@@ -18,12 +18,12 @@ class AppleCatchGame {
             y: this.canvas.height - 60,
             width: 60,
             height: 40,
-            speed: 8
+            speed: 10
         };
         
         this.apples = [];
-        this.appleSpeed = 2;
-        this.appleSpawnRate = 0.02;
+        this.appleSpeed = 1.2;
+        this.appleSpawnRate = 0.008;
         
         this.keys = {};
         
@@ -44,7 +44,7 @@ class AppleCatchGame {
         this.gameState = 'playing';
         this.startScreen.style.display = 'none';
         this.score = 0;
-        this.lives = 3;
+        this.lives = 20;
         this.level = 1;
         this.apples = [];
         this.basket.x = this.canvas.width / 2 - 30;
@@ -64,13 +64,13 @@ class AppleCatchGame {
     }
     
     spawnApple() {
-        if (Math.random() < this.appleSpawnRate + (this.level * 0.005)) {
+        if (Math.random() < this.appleSpawnRate + (this.level * 0.002)) {
             this.apples.push({
                 x: Math.random() * (this.canvas.width - 30),
                 y: -30,
                 width: 30,
                 height: 30,
-                speed: this.appleSpeed + (this.level * 0.5)
+                speed: this.appleSpeed + (this.level * 0.2)
             });
         }
     }
@@ -97,8 +97,8 @@ class AppleCatchGame {
                 this.apples.splice(i, 1);
                 this.score += 10;
                 
-                // Level up every 100 points
-                if (this.score > 0 && this.score % 100 === 0) {
+                // Level up every 150 points
+                if (this.score > 0 && this.score % 150 === 0) {
                     this.level++;
                 }
                 
