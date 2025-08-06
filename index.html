@@ -1,56 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Game Collection</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Mini Game Collection</h1>
+        <p>Choose your favorite game to play!</p>
+      </header>
 
-<html lang="ko">
+      <div class="game-menu">
+        <div class="game-card" onclick="loadGame('dodge-the-poop')">
+          <div class="game-icon">💩</div>
+          <h3>Dodge the Poop</h3>
+          <p>Avoid falling objects and survive as long as you can!</p>
+          <button>Play Now</button>
+        </div>
 
-<head>
+        <div class="game-card" onclick="loadGame('crossy-road1')">
+          <div class="game-icon">🐔</div>
+          <h3>Cross the Road 1</h3>
+          <p>An advanced road crossing adventure!</p>
+          <button>Play Now</button>
+        </div>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLBXCPXVVH"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+        <div class="game-card" onclick="loadGame('cross-the-road')">
+          <div class="game-icon">🐔</div>
+          <h3>Cross the Road 2</h3>
+          <p>Help the chicken cross busy roads safely!</p>
+          <button>Play Now</button>
+        </div>
+      </div>
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+      <div id="game-container" style="display: none">
+        <div class="game-header">
+          <button id="back-btn" onclick="returnToMenu()">← Back to Menu</button>
+          <h2 id="current-game-title"></h2>
+        </div>
+        <iframe id="game-frame" src="" frameborder="0"></iframe>
+      </div>
+    </div>
 
-        gtag('config', 'G-PLBXCPXVVH');
-    </script>
-
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
-    <title>우킹우 게임즈</title>
-</head>
-
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
-    <h5>JS 연습을 위한 페이지입니다.</h5>
-
-    <br>
-
-    <a href="./crossy_road/crossy_road.html">길건너 친구들</a>
-
-    <br>
-
-    <a href="./multiplication_table/js/multiplication_table.html">구구단(js)</a>
-
-    <a href="./multiplication_table/react/multiplication_table.html">구구단(react)</a>
-
-    <a href="./multiplication_table/webpack/index.html">구구단(webpack)</a>
-
-
-    <a href="./word_chain_game/js/word_chain_game.html">끝말잇기(js)</a>
-
-    <a href="./word_chain_game/webpack/word_chain_game.html">끝말잇기(webpack)</a>
-
-
-
-</body>
-
+    <script src="js/main.js"></script>
+  </body>
 </html>
