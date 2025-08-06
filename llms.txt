@@ -1,0 +1,23 @@
+# Web Game Collection for wookingwoo
+
+> A collection of interactive web games built with HTML, CSS, and JavaScript
+
+This repository contains various browser-based games including Crossy Road, Word Chain Game, and Multiplication Table games. The games are implemented using vanilla JavaScript and React, with some featuring webpack builds.
+
+## Games
+
+- [Crossy Road](games/crossy_road/): Browser-based endless runner game
+- [Word Chain Game](games/word_chain_game/): Interactive word association game with JavaScript and React versions
+- [Multiplication Table](games/multiplication_table/): Educational math game with multiple implementations
+
+## Documentation
+
+- [index.html](index.html): Main landing page with game navigation
+- [Game Styles](styles/): CSS stylesheets for game interfaces
+- [JavaScript Utils](js/): Shared JavaScript utilities and components
+
+## Developer Contact
+
+- Name: wookingwoo
+- Email: contact@wookingwoo.com
+- GitHub: https://github.com/wookingwoo/web_game
