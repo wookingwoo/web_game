@@ -20,6 +20,10 @@ function loadGame(gameType) {
       gameFrame.src = "games/cross-the-road/index.html";
       gameTitle.textContent = "Cross the Road 2";
       break;
+    case "apple-catch":
+      gameFrame.src = "games/apple-catch/index.html";
+      gameTitle.textContent = "Apple Catch";
+      break;
 
     default:
       console.error("Unknown game type:", gameType);

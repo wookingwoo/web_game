@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #87CEEB 0%, #98FB98 100%);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.score, .lives, .level {
+    background: #f8f9fa;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 2px solid #e74c3c;
+}
+
+#gameCanvas {
+    border: 3px solid #34495e;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #87CEEB 0%, #98FB98 70%, #8FBC8F 100%);
+    display: block;
+    margin: 0 auto;
+}
+
+.game-over, .start-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 100;
+}
+
+.hidden {
+    display: none;
+}
+
+.game-over h2, .start-screen h2 {
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.start-screen h2 {
+    color: #27ae60;
+}
+
+button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 10px;
+}
+
+button:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+}
+
+.start-screen button {
+    background: #27ae60;
+}
+
+.start-screen button:hover {
+    background: #219a52;
+}
+
+.controls {
+    margin-top: 15px;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.controls p {
+    margin: 5px 0;
+}
+
+@keyframes fall {
+    from { transform: translateY(-20px); }
+    to { transform: translateY(0); }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Catch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-info">
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="lives">Lives: <span id="lives">3</span></div>
+            <div class="level">Level: <span id="level">1</span></div>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div id="gameOver" class="game-over hidden">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+        
+        <div id="startScreen" class="start-screen">
+            <h2>Apple Catch Game</h2>
+            <p>Catch falling apples with your basket!</p>
+            <p>Use LEFT/RIGHT ARROW KEYS or A/D to move</p>
+            <button onclick="startGame()">Start Game</button>
+        </div>
+        
+        <div class="controls">
+            <p>Use ARROW KEYS or A/D to move the basket</p>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
