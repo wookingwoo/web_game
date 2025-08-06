@@ -510,15 +510,19 @@ document.getElementById("right").addEventListener("click", () => move("right"));
 window.addEventListener("keydown", (event) => {
     if (event.keyCode == "38") {
         // up arrow
+        event.preventDefault();
         move("forward");
     } else if (event.keyCode == "40") {
         // down arrow
+        event.preventDefault();
         move("backward");
     } else if (event.keyCode == "37") {
         // left arrow
+        event.preventDefault();
         move("left");
     } else if (event.keyCode == "39") {
         // right arrow
+        event.preventDefault();
         move("right");
     }
 });
