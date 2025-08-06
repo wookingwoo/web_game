@@ -31,7 +31,39 @@ function returnToMenu() {
   const gameContainer = document.getElementById("game-container");
   const gameFrame = document.getElementById("game-frame");
 
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+  }
+
   gameContainer.style.display = "none";
   gameMenu.style.display = "grid";
   gameFrame.src = "";
 }
+
+function toggleFullscreen() {
+  const gameContainer = document.getElementById("game-container");
+  const fullscreenBtn = document.getElementById("fullscreen-btn");
+
+  if (!document.fullscreenElement) {
+    gameContainer.requestFullscreen().then(() => {
+      fullscreenBtn.textContent = "🗗 Exit Fullscreen";
+    }).catch(err => {
+      console.error("Error attempting to enable fullscreen:", err);
+    });
+  } else {
+    document.exitFullscreen().then(() => {
+      fullscreenBtn.textContent = "🔳 Fullscreen";
+    }).catch(err => {
+      console.error("Error attempting to exit fullscreen:", err);
+    });
+  }
+}
+
+document.addEventListener("fullscreenchange", () => {
+  const fullscreenBtn = document.getElementById("fullscreen-btn");
+  if (document.fullscreenElement) {
+    fullscreenBtn.textContent = "🗗 Exit Fullscreen";
+  } else {
+    fullscreenBtn.textContent = "🔳 Fullscreen";
+  }
+});
