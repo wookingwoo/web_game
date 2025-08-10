@@ -67,11 +67,18 @@ function toggleFullscreen() {
   }
 }
 
-document.addEventListener("fullscreenchange", () => {
-  const fullscreenBtn = document.getElementById("fullscreen-btn");
-  if (document.fullscreenElement) {
-    fullscreenBtn.textContent = "🗗 Exit Fullscreen";
-  } else {
-    fullscreenBtn.textContent = "🔳 Fullscreen";
-  }
-});
+if (typeof document !== "undefined") {
+  document.addEventListener("fullscreenchange", () => {
+    const fullscreenBtn = document.getElementById("fullscreen-btn");
+    if (document.fullscreenElement) {
+      fullscreenBtn.textContent = "🗗 Exit Fullscreen";
+    } else {
+      fullscreenBtn.textContent = "🔳 Fullscreen";
+    }
+  });
+}
+
+// Expose functions for testing in Node environments
+if (typeof module !== "undefined") {
+  module.exports = { loadGame, returnToMenu, toggleFullscreen };
+}
