@@ -1,0 +1,8 @@
+{
+  "name": "web_game",
+  "version": "1.0.0",
+  "description": "Web game project",
+  "scripts": {
+    "test": "node --test"
+  }
+}
