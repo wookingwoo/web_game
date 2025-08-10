@@ -24,6 +24,10 @@ function loadGame(gameType) {
       gameFrame.src = "games/apple-catch/index.html";
       gameTitle.textContent = "Apple Catch";
       break;
+    case "jumping-ball-runner":
+      gameFrame.src = "games/jumping-ball-runner/index.html";
+      gameTitle.textContent = "Jumping Ball Runner";
+      break;
 
     default:
       console.error("Unknown game type:", gameType);

@@ -16,6 +16,9 @@ Avoid falling objects and survive as long as you can! A fun survival game.
 ### 🐸 Crossy Road
 Navigate through traffic and obstacles in this classic arcade-style game.
 
+### ⚽ Jumping Ball Runner
+Keep a ball rolling and jump over obstacles in this simple runner game.
+
 ## How to Play
 
 1. Open `index.html` in your web browser
@@ -32,6 +35,7 @@ web_game/
 │   ├── apple-catch/
 │   ├── cross-the-road/
 │   ├── crossy_road/
+│   ├── jumping-ball-runner/
 │   └── dodge-the-poop/
 ├── js/                 # Main JavaScript files
 ├── styles/             # Main CSS files
