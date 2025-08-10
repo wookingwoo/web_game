@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Painter</title>
+  <link rel="stylesheet" href="painter.css" />
+</head>
+<body>
+  <div class="window" role="application">
+    <div class="title-bar" tabindex="0">
+      <span class="title">Pixel Painter</span>
+    </div>
+    <div class="toolbar" role="toolbar">
+      <button id="tool-pencil" class="tool" data-tool="pencil" title="Pencil (1)" aria-label="Pencil tool">✏️</button>
+      <button id="tool-eraser" class="tool" data-tool="eraser" title="Eraser (2)" aria-label="Eraser tool">🧽</button>
+      <button id="tool-fill" class="tool" data-tool="fill" title="Fill (3)" aria-label="Fill tool">🪣</button>
+      <button id="tool-line" class="tool" data-tool="line" title="Line (4)" aria-label="Line tool">📏</button>
+      <button id="tool-rect" class="tool" data-tool="rect" title="Rectangle (5)" aria-label="Rectangle tool">▭</button>
+      <button id="tool-circle" class="tool" data-tool="circle" title="Circle (6)" aria-label="Circle tool">◯</button>
+      <button id="tool-select" class="tool" data-tool="select" title="Select (7)" aria-label="Select tool">🔲</button>
+      <button id="tool-eyedrop" class="tool" data-tool="eyedrop" title="Eyedropper (8)" aria-label="Eyedropper tool">🎯</button>
+      <button id="grid-toggle" title="Toggle Grid" aria-label="Toggle grid">#</button>
+      <button id="undo" title="Undo (Ctrl+Z)" aria-label="Undo">↶</button>
+      <button id="redo" title="Redo (Ctrl+Y)" aria-label="Redo">↷</button>
+      <button id="copy" title="Copy" aria-label="Copy selection">📄</button>
+      <button id="paste" title="Paste" aria-label="Paste">📋</button>
+      <button id="flip" title="Flip selection" aria-label="Flip selection">⇋</button>
+      <button id="rotate" title="Rotate selection" aria-label="Rotate selection">⤾</button>
+      <button id="clear" title="Clear canvas" aria-label="Clear canvas">🗑️</button>
+      <button id="import" title="Import PNG" aria-label="Import PNG">📁</button>
+      <button id="export" title="Export PNG" aria-label="Export PNG">💾</button>
+      <button id="save" title="Save to browser" aria-label="Save to browser">💽</button>
+      <button id="load" title="Load from browser" aria-label="Load from browser">📂</button>
+      <input type="file" id="file-input" accept="image/png" style="display:none" />
+    </div>
+    <div class="content">
+      <div class="palette" role="list">
+        <div class="fgbg">
+          <div id="fg-display" class="color-display" title="Foreground color"></div>
+          <div id="bg-display" class="color-display" title="Background color"></div>
+          <button id="swap-colors" title="Swap colors" aria-label="Swap colors">⇅</button>
+        </div>
+        <div id="swatches"><!-- palette buttons inserted by script --></div>
+      </div>
+      <div class="canvas-wrapper">
+        <canvas id="grid" width="512" height="512"></canvas>
+        <canvas id="canvas" width="512" height="512" tabindex="0" aria-label="Drawing canvas"></canvas>
+      </div>
+    </div>
+    <div class="status-bar" aria-live="polite">
+      <span id="status">0,0</span>
+      <span class="zoom">Zoom: <span id="zoom-display">16x</span></span>
+    </div>
+  </div>
+  <script src="painter.js"></script>
+</body>
+</html>
