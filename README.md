@@ -46,6 +46,12 @@ web_game/
 
 Simply open `index.html` in any modern web browser. No installation or build process required!
 
+### Run with a Local Server
+
+1. Install dependencies with `npm install`
+2. Start the server using `npm start`
+3. Visit http://localhost:3000 in your browser
+
 ## Browser Compatibility
 
 - Chrome (recommended)
