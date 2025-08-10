@@ -28,6 +28,10 @@ function loadGame(gameType) {
       gameFrame.src = "games/jumping-ball-runner/index.html";
       gameTitle.textContent = "Jumping Ball Runner";
       break;
+    case "pixel-painter":
+      gameFrame.src = "games/pixel-painter/index.html";
+      gameTitle.textContent = "Pixel Painter";
+      break;
 
     default:
       console.error("Unknown game type:", gameType);
