@@ -32,7 +32,10 @@ function loadGame(gameType) {
       gameFrame.src = "games/pixel-painter/index.html";
       gameTitle.textContent = "Pixel Painter";
       break;
-
+    case "lofi-visualizer":
+      gameFrame.src = "games/lofi-visualizer/index.html";
+      gameTitle.textContent = "Lo-Fi Visualiser";
+      break;
     default:
       console.error("Unknown game type:", gameType);
   }
