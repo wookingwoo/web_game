@@ -32,6 +32,10 @@ function loadGame(gameType) {
       gameFrame.src = "games/pixel-painter/index.html";
       gameTitle.textContent = "Pixel Painter";
       break;
+    case "typing-speed-race":
+      gameFrame.src = "games/typing-speed-race/index.html";
+      gameTitle.textContent = "Typing Speed Race";
+      break;
 
     default:
       console.error("Unknown game type:", gameType);
