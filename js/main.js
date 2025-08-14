@@ -32,6 +32,10 @@ function loadGame(gameType) {
       gameFrame.src = "games/pixel-painter/index.html";
       gameTitle.textContent = "Pixel Painter";
       break;
+      case "virtual-drum-kit":
+        gameFrame.src = "games/virtual-drum-kit/index.html";
+        gameTitle.textContent = "Virtual Drum Kit";
+        break;
 
     default:
       console.error("Unknown game type:", gameType);
