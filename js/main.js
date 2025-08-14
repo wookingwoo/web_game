@@ -40,7 +40,10 @@ function loadGame(gameType) {
       gameFrame.src = "games/virtual-drum-kit/index.html";
       gameTitle.textContent = "Virtual Drum Kit";
       break;
-
+    case "lofi-visualizer":
+      gameFrame.src = "games/lofi-visualizer/index.html";
+      gameTitle.textContent = "Lo-Fi Visualiser";
+      break;
     default:
       console.error("Unknown game type:", gameType);
   }
