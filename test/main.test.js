@@ -20,6 +20,25 @@ test('loadGame loads a game and updates DOM', () => {
   assert.strictEqual(elements['current-game-title'].textContent, 'Dodge the Poop');
   delete global.document;
 });
+  test("loadGame loads virtual drum kit", () => {
+    const elements = {
+      ".game-menu": { style: { display: "grid" } },
+      "game-container": { style: { display: "none" } },
+      "game-frame": { src: "" },
+      "current-game-title": { textContent: "" }
+    };
+    global.document = {
+      querySelector: (sel) => elements[sel],
+      getElementById: (id) => elements[id]
+    };
+    loadGame("virtual-drum-kit");
+    assert.strictEqual(elements[".game-menu"].style.display, "none");
+    assert.strictEqual(elements["game-container"].style.display, "block");
+    assert.ok(elements["game-frame"].src.includes("games/virtual-drum-kit/index.html"));
+    assert.strictEqual(elements["current-game-title"].textContent, "Virtual Drum Kit");
+    delete global.document;
+  });
+
 
 test('returnToMenu resets the game view', () => {
   const elements = {

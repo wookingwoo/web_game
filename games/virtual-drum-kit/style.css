@@ -1,0 +1,80 @@
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.studio {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+.controls button {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.controls button:hover {
+  background: #666;
+}
+
+.controls button:active {
+  transform: scale(0.95);
+}
+
+#record-btn.recording {
+  background: #c0392b;
+}
+
+.pad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-gap: 15px;
+  justify-content: center;
+}
+
+.pad {
+  width: 120px;
+  height: 120px;
+  background: #2c3e50;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.05s, box-shadow 0.2s;
+}
+
+.pad span {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.pad.active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(255,255,255,0.7);
+}

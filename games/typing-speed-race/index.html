@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Typing Speed Race</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div id="overlay" class="overlay hidden">
+      <div id="countdown" class="countdown"></div>
+    </div>
+    <div class="container">
+      <h1>Typing Speed Race</h1>
+      <div id="paragraph" class="paragraph"></div>
+      <textarea id="input" disabled placeholder="Start typing here..."></textarea>
+      <div class="stats">
+        <div>Time: <span id="time">60</span>s</div>
+        <div>WPM: <span id="wpm">0</span></div>
+        <div>Accuracy: <span id="accuracy">100</span>%</div>
+      </div>
+      <button id="start-btn">Start Race</button>
+      <canvas id="historyChart" width="400" height="200"></canvas>
+    </div>
+    <script src="game.js"></script>
+  </body>
+</html>

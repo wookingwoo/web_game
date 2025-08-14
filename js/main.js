@@ -32,6 +32,14 @@ function loadGame(gameType) {
       gameFrame.src = "games/pixel-painter/index.html";
       gameTitle.textContent = "Pixel Painter";
       break;
+    case "typing-speed-race":
+      gameFrame.src = "games/typing-speed-race/index.html";
+      gameTitle.textContent = "Typing Speed Race";
+      break;
+    case "virtual-drum-kit":
+      gameFrame.src = "games/virtual-drum-kit/index.html";
+      gameTitle.textContent = "Virtual Drum Kit";
+      break;
     case "lofi-visualizer":
       gameFrame.src = "games/lofi-visualizer/index.html";
       gameTitle.textContent = "Lo-Fi Visualiser";
@@ -60,17 +68,23 @@ function toggleFullscreen() {
   const fullscreenBtn = document.getElementById("fullscreen-btn");
 
   if (!document.fullscreenElement) {
-    gameContainer.requestFullscreen().then(() => {
-      fullscreenBtn.textContent = "🗗 Exit Fullscreen";
-    }).catch(err => {
-      console.error("Error attempting to enable fullscreen:", err);
-    });
+    gameContainer
+      .requestFullscreen()
+      .then(() => {
+        fullscreenBtn.textContent = "🗗 Exit Fullscreen";
+      })
+      .catch((err) => {
+        console.error("Error attempting to enable fullscreen:", err);
+      });
   } else {
-    document.exitFullscreen().then(() => {
-      fullscreenBtn.textContent = "🔳 Fullscreen";
-    }).catch(err => {
-      console.error("Error attempting to exit fullscreen:", err);
-    });
+    document
+      .exitFullscreen()
+      .then(() => {
+        fullscreenBtn.textContent = "🔳 Fullscreen";
+      })
+      .catch((err) => {
+        console.error("Error attempting to exit fullscreen:", err);
+      });
   }
 }
 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual Drum Kit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="studio">
+    <h1>Virtual Drum Kit</h1>
+    <div class="controls">
+      <button id="record-btn">● Record</button>
+      <button id="play-btn" disabled>▶ Play</button>
+      <button id="clear-btn">✖ Clear</button>
+    </div>
+    <div class="pad-grid">
+      <div class="pad" data-sound="kick" data-key="A">A<span>Kick</span></div>
+      <div class="pad" data-sound="snare" data-key="S">S<span>Snare</span></div>
+      <div class="pad" data-sound="hihat" data-key="D">D<span>Hi-Hat</span></div>
+      <div class="pad" data-sound="hihat-open" data-key="F">F<span>Open Hat</span></div>
+      <div class="pad" data-sound="tom1" data-key="G">G<span>Tom 1</span></div>
+      <div class="pad" data-sound="tom2" data-key="H">H<span>Tom 2</span></div>
+      <div class="pad" data-sound="tom3" data-key="J">J<span>Tom 3</span></div>
+      <div class="pad" data-sound="crash" data-key="K">K<span>Crash</span></div>
+      <div class="pad" data-sound="clap" data-key="L">L<span>Clap</span></div>
+    </div>
+  </div>
+  <script src="drumkit.js"></script>
+</body>
+</html>
