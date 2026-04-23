@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🎮 TETRIS</h1>
+        </div>
+        
+        <div class="game-content">
+            <div class="side-panel left-panel">
+                <div class="hold-box">
+                    <h3>HOLD</h3>
+                    <canvas id="holdCanvas" width="100" height="100"></canvas>
+                </div>
+            </div>
+            
+            <div class="main-board">
+                <canvas id="gameCanvas" width="300" height="600"></canvas>
+                <div id="pauseOverlay" class="overlay hidden">
+                    <h2>PAUSED</h2>
+                    <p>Press P to Resume</p>
+                </div>
+                <div id="gameOverOverlay" class="overlay hidden">
+                    <h2>GAME OVER</h2>
+                    <p>Final Score: <span id="finalScore">0</span></p>
+                    <button onclick="restartGame()">Play Again</button>
+                </div>
+            </div>
+            
+            <div class="side-panel right-panel">
+                <div class="next-box">
+                    <h3>NEXT</h3>
+                    <canvas id="nextCanvas" width="100" height="300"></canvas>
+                </div>
+                <div class="stats-box">
+                    <div class="stat">
+                        <span class="stat-label">SCORE</span>
+                        <span class="stat-value" id="score">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">LEVEL</span>
+                        <span class="stat-value" id="level">1</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">LINES</span>
+                        <span class="stat-value" id="lines">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="startScreen" class="start-screen">
+            <h2>🎮 TETRIS</h2>
+            <p>Classic Block Puzzle Game</p>
+            <div class="controls-info">
+                <p>← → : Move</p>
+                <p>↑ : Rotate</p>
+                <p>↓ : Soft Drop</p>
+                <p>Space : Hard Drop</p>
+                <p>C : Hold</p>
+                <p>P : Pause</p>
+            </div>
+            <button onclick="startGame()">Start Game</button>
+        </div>
+        
+        <div class="mobile-controls">
+            <button class="control-btn" id="btnLeft">◀</button>
+            <button class="control-btn" id="btnRotate">↻</button>
+            <button class="control-btn" id="btnDown">▼</button>
+            <button class="control-btn" id="btnRight">▶</button>
+            <button class="control-btn" id="btnDrop">⬇</button>
+            <button class="control-btn" id="btnHold">H</button>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>

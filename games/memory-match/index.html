@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-info">
+            <div class="moves">Moves: <span id="moves">0</span></div>
+            <div class="matches">Matches: <span id="matches">0</span>/8</div>
+            <div class="timer">Time: <span id="timer">0</span>s</div>
+        </div>
+        
+        <div id="gameBoard" class="game-board"></div>
+        
+        <div id="gameOver" class="game-over hidden">
+            <h2>Congratulations!</h2>
+            <p>You completed the game in <span id="finalMoves">0</span> moves!</p>
+            <p>Time: <span id="finalTime">0</span> seconds</p>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+        
+        <div id="startScreen" class="start-screen">
+            <h2>Memory Match Game</h2>
+            <p>Find all matching pairs of cards!</p>
+            <p>Click on cards to flip them and find matches.</p>
+            <button onclick="startGame()">Start Game</button>
+        </div>
+        
+        <div class="controls">
+            <button onclick="restartGame()">Restart</button>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>

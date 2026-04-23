@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.game-header h1 {
+    color: #00d4ff;
+    font-size: 2.5rem;
+    text-shadow: 0 0 20px #00d4ff, 0 0 40px #00d4ff;
+    letter-spacing: 8px;
+}
+
+.game-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hold-box, .next-box, .stats-box {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #00d4ff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.hold-box h3, .next-box h3 {
+    color: #00d4ff;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    letter-spacing: 3px;
+}
+
+#holdCanvas, #nextCanvas {
+    display: block;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.main-board {
+    position: relative;
+}
+
+#gameCanvas {
+    display: block;
+    background: rgba(0, 0, 0, 0.8);
+    border: 3px solid #00d4ff;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5), inset 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.overlay h2 {
+    color: #ff6b6b;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ff6b6b;
+}
+
+.overlay p {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.overlay button {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #00d4ff, #0099cc);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.overlay button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00d4ff;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.stats-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-label {
+    color: #888;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.stat-value {
+    color: #00d4ff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px #00d4ff;
+}
+
+.start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.start-screen h2 {
+    color: #00d4ff;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 30px #00d4ff;
+    letter-spacing: 10px;
+}
+
+.start-screen > p {
+    color: #888;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
+
+.controls-info {
+    background: rgba(0, 212, 255, 0.1);
+    padding: 20px 40px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.controls-info p {
+    color: #fff;
+    margin: 8px 0;
+    font-size: 1rem;
+}
+
+.start-screen button {
+    padding: 20px 60px;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #00d4ff, #0099cc);
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.start-screen button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px #00d4ff;
+}
+
+.mobile-controls {
+    display: none;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.control-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #00d4ff, #0099cc);
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.control-btn:active {
+    transform: scale(0.9);
+    background: #0099cc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .game-header h1 {
+        font-size: 1.8rem;
+        letter-spacing: 5px;
+    }
+    
+    .game-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .side-panel {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .left-panel {
+        order: 2;
+    }
+    
+    .main-board {
+        order: 1;
+    }
+    
+    .right-panel {
+        order: 3;
+    }
+    
+    #gameCanvas {
+        width: 240px;
+        height: 480px;
+    }
+    
+    .mobile-controls {
+        display: flex;
+    }
+    
+    .start-screen h2 {
+        font-size: 2rem;
+    }
+    
+    .controls-info {
+        padding: 15px 25px;
+    }
+    
+    .controls-info p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .game-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    #gameCanvas {
+        width: 200px;
+        height: 400px;
+    }
+    
+    .control-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .hold-box, .next-box, .stats-box {
+        padding: 10px;
+    }
+    
+    #holdCanvas {
+        width: 60px;
+        height: 60px;
+    }
+    
+    #nextCanvas {
+        width: 60px;
+        height: 180px;
+    }
+}
+
+/* Animation for line clear */
+@keyframes lineClear {
+    0% {
+        background: #fff;
+        transform: scaleX(1);
+    }
+    50% {
+        background: #00d4ff;
+        transform: scaleX(1.1);
+    }
+    100% {
+        background: transparent;
+        transform: scaleX(0);
+    }
+}
+
+/* Ghost piece effect */
+.ghost-piece {
+    opacity: 0.3;
+}

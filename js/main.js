@@ -44,6 +44,10 @@ function loadGame(gameType) {
       gameFrame.src = "games/lofi-visualizer/index.html";
       gameTitle.textContent = "Lo-Fi Visualiser";
       break;
+    case "memory-match":
+      gameFrame.src = "games/memory-match/index.html";
+      gameTitle.textContent = "Memory Match";
+      break;
     default:
       console.error("Unknown game type:", gameType);
   }
