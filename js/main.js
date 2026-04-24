@@ -48,6 +48,10 @@ function loadGame(gameType) {
       gameFrame.src = "games/memory-match/index.html";
       gameTitle.textContent = "Memory Match";
       break;
+    case "archery":
+      gameFrame.src = "games/archery/index.html";
+      gameTitle.textContent = "Archery";
+      break;
     default:
       console.error("Unknown game type:", gameType);
   }

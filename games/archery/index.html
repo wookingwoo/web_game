@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-info">
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="round">Round: <span id="round">1</span>/3</div>
+            <div class="arrows">Arrows: <span id="arrows">5</span></div>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div class="power-bar-container">
+            <div class="power-bar" id="powerBar"></div>
+            <span class="power-text">Power</span>
+        </div>
+        
+        <div id="gameOver" class="game-over hidden">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <p>Max Possible: 150</p>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+        
+        <div id="startScreen" class="start-screen">
+            <h2>🏹 Archery Game</h2>
+            <p>Draw your bow and hit the target!</p>
+            <p class="instruction">Drag from the bow to aim and set power</p>
+            <p class="instruction">Release to shoot</p>
+            <button onclick="startGame()">Start Game</button>
+        </div>
+        
+        <div id="roundScreen" class="round-screen hidden">
+            <h2>Round <span id="roundNumber">1</span></h2>
+            <p>Score: <span id="roundScore">0</span></p>
+            <button onclick="nextRound()">Next Round</button>
+        </div>
+        
+        <div class="controls">
+            <p>🎯 Drag from arrow to aim • Release to shoot</p>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
