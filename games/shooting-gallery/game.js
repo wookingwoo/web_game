@@ -128,7 +128,7 @@ class ShootingGalleryGame {
             this.ammoElement.parentElement.classList.add('low');
         }
         
-        if (this.ammo <= 0 && this.targets.length === 0) {
+        if (this.ammo <= 0) {
             this.endRound();
         }
     }
@@ -656,7 +656,7 @@ class ShootingGalleryGame {
         this.updateEffects();
         
         // Check if round should end
-        if (this.ammo <= 0 && this.targets.length === 0) {
+        if (this.ammo <= 0) {
             this.endRound();
             return;
         }
