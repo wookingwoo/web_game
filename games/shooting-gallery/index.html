@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shooting Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-info">
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="round">Round: <span id="round">1</span>/5</div>
+            <div class="ammo">Ammo: <span id="ammo">15</span></div>
+            <div class="time">Time: <span id="time">30</span>s</div>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+        
+        <div class="timer-bar-container">
+            <div class="timer-bar" id="timerBar"></div>
+        </div>
+        
+        <div id="startScreen" class="start-screen">
+            <h2>🎯 Shooting Gallery</h2>
+            <p>Hit the targets to score points!</p>
+            <div class="instructions">
+                <p>🔴 Normal Target: 10 pts</p>
+                <p>🔵 Moving Target: 20 pts</p>
+                <p>🟡 Small Target: 30 pts</p>
+                <p>⭐ Bonus Target: 50 pts</p>
+                <p>💣 Bomb: -20 pts (Avoid!)</p>
+            </div>
+            <p class="instruction">Click to shoot!</p>
+            <button onclick="game.startGame()">Start Game</button>
+        </div>
+        
+        <div id="gameOverScreen" class="game-over hidden">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <p>Accuracy: <span id="accuracy">0</span>%</p>
+            <button onclick="game.restartGame()">Play Again</button>
+        </div>
+        
+        <div id="roundScreen" class="round-screen hidden">
+            <h2>Round <span id="roundNumber">1</span> Complete!</h2>
+            <p>Round Score: <span id="roundScore">0</span></p>
+            <p>Hits: <span id="roundHits">0</span> / <span id="roundShots">0</span></p>
+            <button onclick="game.nextRound()">Next Round</button>
+        </div>
+        
+        <div class="controls">
+            <p>🎯 Move mouse to aim • Click to shoot</p>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>

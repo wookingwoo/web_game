@@ -1,0 +1,211 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #2c1810 0%, #4a3728 50%, #1a1a2e 100%);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    background: rgba(60, 45, 35, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 200, 100, 0.1);
+    text-align: center;
+    position: relative;
+    border: 3px solid #8b7355;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.score, .round, .ammo, .time {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 2px solid #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+#gameCanvas {
+    border: 4px solid #5c4033;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, 
+        #1a1a2e 0%, 
+        #2d2d44 20%, 
+        #3d2817 60%, 
+        #2c1810 100%);
+    display: block;
+    margin: 0 auto;
+    cursor: crosshair;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.timer-bar-container {
+    width: 100%;
+    max-width: 800px;
+    height: 15px;
+    background: #1a1a1a;
+    border-radius: 8px;
+    margin: 15px auto;
+    overflow: hidden;
+    border: 2px solid #5c4033;
+}
+
+.timer-bar {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #e74c3c, #f39c12, #27ae60);
+    border-radius: 6px;
+    transition: width 0.1s linear;
+}
+
+.start-screen, .game-over, .round-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, rgba(44, 24, 16, 0.98), rgba(30, 20, 15, 0.98));
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 215, 0, 0.2);
+    text-align: center;
+    z-index: 100;
+    border: 3px solid #ffd700;
+    color: #fff;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.start-screen h2, .game-over h2, .round-screen h2 {
+    color: #ffd700;
+    margin-bottom: 20px;
+    font-size: 32px;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.start-screen p, .game-over p, .round-screen p {
+    color: #ddd;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.instructions {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.instructions p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.instruction {
+    color: #f39c12 !important;
+    font-weight: bold;
+}
+
+button {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 15px 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.6);
+}
+
+.start-screen button {
+    background: linear-gradient(135deg, #27ae60, #1e8449);
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+}
+
+.start-screen button:hover {
+    background: linear-gradient(135deg, #1e8449, #196f3d);
+    box-shadow: 0 8px 20px rgba(39, 174, 96, 0.6);
+}
+
+.round-screen button {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.round-screen button:hover {
+    background: linear-gradient(135deg, #2980b9, #21618c);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
+}
+
+.controls {
+    margin-top: 15px;
+    color: #bbb;
+    font-size: 14px;
+}
+
+/* Ammo display animation */
+.ammo {
+    transition: all 0.2s;
+}
+
+.ammo.low {
+    color: #e74c3c;
+    animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Hit effect */
+@keyframes hitFlash {
+    0% { box-shadow: inset 0 0 50px rgba(255, 255, 0, 0.5); }
+    100% { box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); }
+}
+
+.hit-flash {
+    animation: hitFlash 0.1s;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    #gameCanvas {
+        width: 100%;
+        height: auto;
+    }
+    
+    .game-info {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .score, .round, .ammo, .time {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}
