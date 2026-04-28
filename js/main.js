@@ -56,6 +56,10 @@ function loadGame(gameType) {
       gameFrame.src = "games/shooting-gallery/index.html";
       gameTitle.textContent = "Shooting Gallery";
       break;
+    case "snake":
+      gameFrame.src = "games/snake/index.html";
+      gameTitle.textContent = "Snake";
+      break;
     default:
       console.error("Unknown game type:", gameType);
   }

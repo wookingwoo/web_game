@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake - Neon Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🐍 SNAKE</h1>
+            <p class="subtitle">NEON EDITION</p>
+        </div>
+
+        <!-- 시작 화면 -->
+        <div id="startScreen" class="screen">
+            <h2>Select Difficulty</h2>
+            <div class="difficulty-options">
+                <button class="difficulty-btn easy" onclick="selectDifficulty('easy')">
+                    <span class="diff-icon">🌱</span>
+                    <span class="diff-name">EASY</span>
+                    <span class="diff-desc">Slow speed, +10 pts</span>
+                </button>
+                <button class="difficulty-btn normal" onclick="selectDifficulty('normal')">
+                    <span class="diff-icon">⚡</span>
+                    <span class="diff-name">NORMAL</span>
+                    <span class="diff-desc">Medium speed, +15 pts</span>
+                </button>
+                <button class="difficulty-btn hard" onclick="selectDifficulty('hard')">
+                    <span class="diff-icon">🔥</span>
+                    <span class="diff-name">HARD</span>
+                    <span class="diff-desc">Fast speed, +25 pts</span>
+                </button>
+            </div>
+            <div class="controls-info">
+                <h3>Controls</h3>
+                <p>🎮 Arrow Keys or WASD to move</p>
+                <p>⏸️ Press P to pause</p>
+            </div>
+        </div>
+
+        <!-- 게임 플레이 영역 -->
+        <div id="gameArea" class="screen hidden">
+            <div class="game-stats">
+                <div class="stat-box">
+                    <span class="stat-label">SCORE</span>
+                    <span class="stat-value" id="score">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">HIGH SCORE</span>
+                    <span class="stat-value" id="highScore">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">LEVEL</span>
+                    <span class="stat-value" id="level">NORMAL</span>
+                </div>
+            </div>
+
+            <div class="canvas-container">
+                <canvas id="gameCanvas" width="400" height="400"></canvas>
+                
+                <!-- 일시정지 오버레이 -->
+                <div id="pauseOverlay" class="overlay hidden">
+                    <h2>⏸️ PAUSED</h2>
+                    <p>Press P to Resume</p>
+                </div>
+            </div>
+
+            <div class="game-controls">
+                <button class="control-btn" onclick="togglePause()">⏸️ Pause</button>
+                <button class="control-btn" onclick="returnToMenu()">🏠 Menu</button>
+            </div>
+        </div>
+
+        <!-- 게임 오버 화면 -->
+        <div id="gameOverScreen" class="screen hidden">
+            <h2 class="game-over-title">GAME OVER</h2>
+            <div class="final-stats">
+                <div class="final-stat">
+                    <span class="final-label">Final Score</span>
+                    <span class="final-value" id="finalScore">0</span>
+                </div>
+                <div class="final-stat">
+                    <span class="final-label">High Score</span>
+                    <span class="final-value" id="finalHighScore">0</span>
+                </div>
+                <div class="final-stat new-record hidden" id="newRecord">
+                    <span>🏆 NEW RECORD!</span>
+                </div>
+            </div>
+            <div class="game-over-buttons">
+                <button class="action-btn play-again" onclick="restartGame()">🔄 Play Again</button>
+                <button class="action-btn menu" onclick="returnToMenu()">🏠 Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
