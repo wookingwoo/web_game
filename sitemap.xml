@@ -2,37 +2,91 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://game.wookingwoo.com/</loc>
-        <lastmod>2025-08-06</lastmod>
+        <lastmod>2026-04-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://game.wookingwoo.com/games/apple-catch/</loc>
-        <lastmod>2025-08-06</lastmod>
+        <loc>https://game.wookingwoo.com/games/dodge-the-poop/</loc>
+        <lastmod>2026-04-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://game.wookingwoo.com/games/cross-the-road/</loc>
-        <lastmod>2025-08-06</lastmod>
+        <lastmod>2026-04-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://game.wookingwoo.com/games/crossy_road/</loc>
-        <lastmod>2025-08-06</lastmod>
+        <lastmod>2026-04-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://game.wookingwoo.com/games/dodge-the-poop/</loc>
-        <lastmod>2025-08-06</lastmod>
+        <loc>https://game.wookingwoo.com/games/apple-catch/</loc>
+        <lastmod>2026-04-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://game.wookingwoo.com/games/jumping-ball-runner/</loc>
-        <lastmod>2025-08-06</lastmod>
+        <lastmod>2026-04-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://game.wookingwoo.com/games/snake/</loc>
+        <lastmod>2026-04-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://game.wookingwoo.com/games/archery/</loc>
+        <lastmod>2026-04-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://game.wookingwoo.com/games/shooting-gallery/</loc>
+        <lastmod>2026-04-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://game.wookingwoo.com/games/memory-match/</loc>
+        <lastmod>2026-04-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://game.wookingwoo.com/games/typing-speed-race/</loc>
+        <lastmod>2026-04-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://game.wookingwoo.com/games/tetris/</loc>
+        <lastmod>2026-04-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://game.wookingwoo.com/games/pixel-painter/</loc>
+        <lastmod>2026-04-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://game.wookingwoo.com/games/virtual-drum-kit/</loc>
+        <lastmod>2026-04-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://game.wookingwoo.com/games/lofi-visualizer/</loc>
+        <lastmod>2026-04-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>

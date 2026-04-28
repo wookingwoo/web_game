@@ -1,23 +1,35 @@
-# Web Game Collection for wookingwoo
+# Mini Game Collection
 
-> A collection of interactive web games built with HTML, CSS, and JavaScript
+> A collection of browser-based mini games built with vanilla HTML, CSS, and JavaScript, playable at https://game.wookingwoo.com
 
-This repository contains various browser-based games including Crossy Road, Word Chain Game, and Multiplication Table games. The games are implemented using vanilla JavaScript and React, with some featuring webpack builds.
+All games run directly in the browser with no installation or login required. The main page provides a searchable, category-filtered game launcher that loads each game inside an iframe.
 
-## Games
+## Action Games
 
-- [Crossy Road](games/crossy_road/): Browser-based endless runner game
-- [Word Chain Game](games/word_chain_game/): Interactive word association game with JavaScript and React versions
-- [Multiplication Table](games/multiplication_table/): Educational math game with multiple implementations
+- [Dodge the Poop](https://game.wookingwoo.com/games/dodge-the-poop/): Avoid falling objects and survive as long as possible
+- [Cross the Road](https://game.wookingwoo.com/games/cross-the-road/): Help a character cross busy roads safely
+- [Crossy Road Classic](https://game.wookingwoo.com/games/crossy_road/crossy_road.html): Original endless road-crossing adventure
+- [Apple Catch](https://game.wookingwoo.com/games/apple-catch/): Catch falling apples with a basket
+- [Jumping Ball Runner](https://game.wookingwoo.com/games/jumping-ball-runner/): Jump over obstacles as a rolling ball
+- [Snake](https://game.wookingwoo.com/games/snake/): Classic snake game with neon visuals and difficulty selection
+- [Archery](https://game.wookingwoo.com/games/archery/): Draw a bow and hit targets with precision
+- [Shooting Gallery](https://game.wookingwoo.com/games/shooting-gallery/): Arcade-style target shooting game
 
-## Documentation
+## Puzzle Games
 
-- [index.html](index.html): Main landing page with game navigation
-- [Game Styles](styles/): CSS stylesheets for game interfaces
-- [JavaScript Utils](js/): Shared JavaScript utilities and components
+- [Memory Match](https://game.wookingwoo.com/games/memory-match/): Flip cards and find all matching pairs
+- [Typing Speed Race](https://game.wookingwoo.com/games/typing-speed-race/): Test typing speed and accuracy under time pressure
+- [Tetris](https://game.wookingwoo.com/games/tetris/): Stack falling blocks and clear lines
 
-## Developer Contact
+## Creative / Music
+
+- [Pixel Painter](https://game.wookingwoo.com/games/pixel-painter/): Draw retro-style pixel art on a grid canvas
+- [Virtual Drum Kit](https://game.wookingwoo.com/games/virtual-drum-kit/): Play drums with keyboard or mouse; supports recording and playback
+- [Lo-Fi Visualizer](https://game.wookingwoo.com/games/lofi-visualizer/): Audio visualizer with animated bars and waves over a vaporwave track
+
+## Developer
 
 - Name: wookingwoo
 - Email: contact@wookingwoo.com
 - GitHub: https://github.com/wookingwoo/web_game
+- Site: https://game.wookingwoo.com
