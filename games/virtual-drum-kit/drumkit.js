@@ -16,6 +16,7 @@ const soundMap = {
 let isRecording = false;
 let recordStart = 0;
 let recorded = [];
+let playbackTimeouts = [];
 
 const pads = document.querySelectorAll(".pad");
 const recordBtn = document.getElementById("record-btn");
@@ -60,6 +61,8 @@ function triggerSound(name) {
 }
 
 function startRecording() {
+  playbackTimeouts.forEach(t => clearTimeout(t));
+  playbackTimeouts = [];
   recorded = [];
   isRecording = true;
   recordStart = performance.now();
@@ -79,9 +82,25 @@ function stopRecording() {
 
 function playRecording() {
   if (recorded.length === 0) return;
-  recorded.forEach(event => {
-    setTimeout(() => triggerSound(event.sound), event.time);
+
+  playbackTimeouts.forEach(t => clearTimeout(t));
+  playbackTimeouts = [];
+  playBtn.disabled = true;
+  recordBtn.disabled = true;
+
+  const snapshot = [...recorded];
+  snapshot.forEach(event => {
+    const t = setTimeout(() => triggerSound(event.sound), event.time);
+    playbackTimeouts.push(t);
   });
+
+  const lastTime = snapshot[snapshot.length - 1].time;
+  const endTimer = setTimeout(() => {
+    playBtn.disabled = false;
+    recordBtn.disabled = false;
+    playbackTimeouts = [];
+  }, lastTime + 300);
+  playbackTimeouts.push(endTimer);
 }
 
 // --- Sound synthesis functions ---
