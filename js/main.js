@@ -33,9 +33,9 @@ const GAMES = [
   },
   {
     id: "jumping-ball-runner",
-    title: "Jumping Ball Runner",
-    icon: "⚽",
-    description: "Jump over obstacles as a rolling ball!",
+    title: "Underwater Dash",
+    icon: "🐠",
+    description: "Swim a clownfish over coral reefs in this underwater runner!",
     category: "action",
     src: "games/jumping-ball-runner/index.html",
   },

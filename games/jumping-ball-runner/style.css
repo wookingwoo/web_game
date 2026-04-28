@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 20px;
-    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    background: linear-gradient(135deg, #0c2d57 0%, #1565a0 100%);
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -11,10 +11,11 @@ body {
 
 .game-container {
     text-align: center;
-    background: white;
-    border-radius: 15px;
+    background: rgba(10, 30, 60, 0.85);
+    border: 2px solid rgba(100, 180, 255, 0.3);
+    border-radius: 16px;
     padding: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 0 40px rgba(0, 100, 200, 0.4);
     position: relative;
 }
 
@@ -22,13 +23,15 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #333;
+    color: #7ecfff;
+    letter-spacing: 0.05em;
 }
 
 #gameCanvas {
-    border: 3px solid #333;
+    border: 2px solid rgba(100, 180, 255, 0.4);
     border-radius: 10px;
-    background: linear-gradient(to bottom, #87CEEB 0%, #FFFFFF 100%);
+    display: block;
+    cursor: pointer;
 }
 
 .game-over {
@@ -36,45 +39,48 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: rgba(10, 30, 60, 0.95);
+    border: 2px solid rgba(100, 180, 255, 0.5);
+    padding: 40px 50px;
+    border-radius: 16px;
+    box-shadow: 0 0 40px rgba(0, 100, 200, 0.5);
     text-align: center;
     z-index: 1000;
 }
 
 .game-over h2 {
-    color: #e74c3c;
-    margin-bottom: 20px;
+    color: #7ecfff;
+    margin-bottom: 16px;
     font-size: 2rem;
 }
 
 .game-over p {
     font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: #333;
+    margin-bottom: 24px;
+    color: #b0d8f0;
 }
 
 .game-over button {
-    background: #3498db;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 25px;
-    font-size: 1.1rem;
+    background: linear-gradient(135deg, #1565a0, #0c2d57);
+    color: #7ecfff;
+    border: 2px solid rgba(100, 180, 255, 0.5);
+    padding: 14px 36px;
+    border-radius: 30px;
+    font-size: 1.05rem;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.25s ease;
+    letter-spacing: 0.04em;
 }
 
 .game-over button:hover {
-    background: #2980b9;
+    background: linear-gradient(135deg, #1e88c8, #1565a0);
+    box-shadow: 0 0 16px rgba(100, 180, 255, 0.5);
 }
 
 .controls {
-    margin-top: 15px;
-    color: #666;
-    font-size: 0.9rem;
+    margin-top: 14px;
+    color: rgba(126, 207, 255, 0.6);
+    font-size: 0.88rem;
 }
 
 .hidden {
