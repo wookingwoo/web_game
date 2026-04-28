@@ -25,7 +25,6 @@ All games run directly in the browser with no installation or login required. Th
 
 - [Pixel Painter](https://game.wookingwoo.com/games/pixel-painter/): Draw retro-style pixel art on a grid canvas
 - [Virtual Drum Kit](https://game.wookingwoo.com/games/virtual-drum-kit/): Play drums with keyboard or mouse; supports recording and playback
-- [Lo-Fi Visualizer](https://game.wookingwoo.com/games/lofi-visualizer/): Audio visualizer with animated bars and waves over a vaporwave track
 
 ## Developer
 

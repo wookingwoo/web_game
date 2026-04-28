@@ -103,14 +103,6 @@ const GAMES = [
     category: "creative",
     src: "games/virtual-drum-kit/index.html",
   },
-  {
-    id: "lofi-visualizer",
-    title: "Lo-Fi Visualizer",
-    icon: "🎶",
-    description: "Animate bars and waves to a vaporwave track.",
-    category: "creative",
-    src: "games/lofi-visualizer/index.html",
-  },
 ];
 
 const CATEGORY_COLORS = {
