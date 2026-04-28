@@ -37,7 +37,7 @@ const GAMES = [
     icon: "🐠",
     description: "Swim a clownfish over coral reefs in this underwater runner!",
     category: "action",
-    src: "games/jumping-ball-runner/index.html",
+    src: "games/underwater-dash/index.html",
   },
   {
     id: "snake",

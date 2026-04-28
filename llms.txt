@@ -10,7 +10,7 @@ All games run directly in the browser with no installation or login required. Th
 - [Cross the Road](https://game.wookingwoo.com/games/cross-the-road/): Help a character cross busy roads safely
 - [Crossy Road Classic](https://game.wookingwoo.com/games/crossy_road/crossy_road.html): Original endless road-crossing adventure
 - [Apple Catch](https://game.wookingwoo.com/games/apple-catch/): Catch falling apples with a basket
-- [Jumping Ball Runner](https://game.wookingwoo.com/games/jumping-ball-runner/): Jump over obstacles as a rolling ball
+- [Underwater Dash](https://game.wookingwoo.com/games/underwater-dash/): Swim a clownfish over coral reefs in this underwater runner
 - [Snake](https://game.wookingwoo.com/games/snake/): Classic snake game with neon visuals and difficulty selection
 - [Archery](https://game.wookingwoo.com/games/archery/): Draw a bow and hit targets with precision
 - [Shooting Gallery](https://game.wookingwoo.com/games/shooting-gallery/): Arcade-style target shooting game
