@@ -1,121 +1,211 @@
-function loadGame(gameType) {
-  const gameMenu = document.querySelector(".game-menu");
+const GAMES = [
+  {
+    id: "dodge-the-poop",
+    title: "Dodge the Poop",
+    icon: "💩",
+    description: "Avoid falling objects and survive as long as you can!",
+    category: "action",
+    src: "games/dodge-the-poop/index.html",
+  },
+  {
+    id: "cross-the-road",
+    title: "Cross the Road",
+    icon: "🐔",
+    description: "Help the chicken cross busy roads safely!",
+    category: "action",
+    src: "games/cross-the-road/index.html",
+  },
+  {
+    id: "crossy-road1",
+    title: "Crossy Road Classic",
+    icon: "🐣",
+    description: "The original road crossing adventure!",
+    category: "action",
+    src: "games/crossy_road/crossy_road.html",
+  },
+  {
+    id: "apple-catch",
+    title: "Apple Catch",
+    icon: "🍎",
+    description: "Catch falling apples with your basket!",
+    category: "action",
+    src: "games/apple-catch/index.html",
+  },
+  {
+    id: "jumping-ball-runner",
+    title: "Jumping Ball Runner",
+    icon: "⚽",
+    description: "Jump over obstacles as a rolling ball!",
+    category: "action",
+    src: "games/jumping-ball-runner/index.html",
+  },
+  {
+    id: "snake",
+    title: "Snake",
+    icon: "🐍",
+    description: "Classic snake game with neon style. Choose your difficulty!",
+    category: "action",
+    src: "games/snake/index.html",
+  },
+  {
+    id: "archery",
+    title: "Archery",
+    icon: "🏹",
+    description: "Draw your bow and hit the target!",
+    category: "action",
+    src: "games/archery/index.html",
+  },
+  {
+    id: "shooting-gallery",
+    title: "Shooting Gallery",
+    icon: "🎯",
+    description: "Aim and shoot targets in this arcade-style game!",
+    category: "action",
+    src: "games/shooting-gallery/index.html",
+  },
+  {
+    id: "memory-match",
+    title: "Memory Match",
+    icon: "🧠",
+    description: "Find all matching pairs of cards!",
+    category: "puzzle",
+    src: "games/memory-match/index.html",
+  },
+  {
+    id: "typing-speed-race",
+    title: "Typing Speed Race",
+    icon: "⌨️",
+    description: "Test your typing speed and accuracy under pressure!",
+    category: "puzzle",
+    src: "games/typing-speed-race/index.html",
+  },
+  {
+    id: "tetris",
+    title: "Tetris",
+    icon: "🟦",
+    description: "Stack falling blocks and clear lines!",
+    category: "puzzle",
+    src: "games/tetris/index.html",
+  },
+  {
+    id: "pixel-painter",
+    title: "Pixel Painter",
+    icon: "🎨",
+    description: "Create retro-style pixel art.",
+    category: "creative",
+    src: "games/pixel-painter/index.html",
+  },
+  {
+    id: "virtual-drum-kit",
+    title: "Virtual Drum Kit",
+    icon: "🥁",
+    description: "Play drums with your keyboard or mouse. Record and play back beats!",
+    category: "creative",
+    src: "games/virtual-drum-kit/index.html",
+  },
+  {
+    id: "lofi-visualizer",
+    title: "Lo-Fi Visualizer",
+    icon: "🎶",
+    description: "Animate bars and waves to a vaporwave track.",
+    category: "creative",
+    src: "games/lofi-visualizer/index.html",
+  },
+];
+
+const CATEGORY_COLORS = {
+  action: { bg: "#fff0f0", badge: "#e74c3c", label: "Action" },
+  puzzle: { bg: "#f0f4ff", badge: "#3b5bdb", label: "Puzzle" },
+  creative: { bg: "#f0fff4", badge: "#2f9e44", label: "Creative" },
+};
+
+let activeCategory = "all";
+
+function renderGames() {
+  const menu = document.getElementById("game-menu");
+  menu.innerHTML = GAMES.map((g) => {
+    const color = CATEGORY_COLORS[g.category];
+    return `
+      <div class="game-card" data-id="${g.id}" data-category="${g.category}" onclick="loadGame('${g.id}')">
+        <span class="category-badge" style="background:${color.badge}">${color.label}</span>
+        <div class="game-icon">${g.icon}</div>
+        <h3>${g.title}</h3>
+        <p>${g.description}</p>
+        <button>Play Now</button>
+      </div>`;
+  }).join("");
+
+  document.getElementById("game-count").textContent = `${GAMES.length} Games`;
+  filterGames();
+}
+
+function setCategory(btn) {
+  document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+  btn.classList.add("active");
+  activeCategory = btn.dataset.category;
+  filterGames();
+}
+
+function filterGames() {
+  const query = (document.getElementById("search-input").value || "").toLowerCase();
+  const cards = document.querySelectorAll(".game-card");
+  let visible = 0;
+
+  cards.forEach((card) => {
+    const matchCategory = activeCategory === "all" || card.dataset.category === activeCategory;
+    const matchSearch = !query || card.querySelector("h3").textContent.toLowerCase().includes(query);
+    const show = matchCategory && matchSearch;
+    card.style.display = show ? "" : "none";
+    if (show) visible++;
+  });
+
+  document.getElementById("no-results").style.display = visible === 0 ? "block" : "none";
+}
+
+function loadGame(gameId) {
+  const game = GAMES.find((g) => g.id === gameId);
+  if (!game) return;
+
+  document.querySelector(".controls").style.display = "none";
+  document.getElementById("game-menu").style.display = "none";
+  document.getElementById("no-results").style.display = "none";
+  document.querySelector("header").style.display = "none";
+
   const gameContainer = document.getElementById("game-container");
-  const gameFrame = document.getElementById("game-frame");
-  const gameTitle = document.getElementById("current-game-title");
-
-  gameMenu.style.display = "none";
   gameContainer.style.display = "block";
-
-  switch (gameType) {
-    case "dodge-the-poop":
-      gameFrame.src = "games/dodge-the-poop/index.html";
-      gameTitle.textContent = "Dodge the Poop";
-      break;
-    case "crossy-road1":
-      gameFrame.src = "games/crossy_road/crossy_road.html";
-      gameTitle.textContent = "Cross the Road 1";
-      break;
-    case "cross-the-road":
-      gameFrame.src = "games/cross-the-road/index.html";
-      gameTitle.textContent = "Cross the Road 2";
-      break;
-    case "apple-catch":
-      gameFrame.src = "games/apple-catch/index.html";
-      gameTitle.textContent = "Apple Catch";
-      break;
-    case "jumping-ball-runner":
-      gameFrame.src = "games/jumping-ball-runner/index.html";
-      gameTitle.textContent = "Jumping Ball Runner";
-      break;
-    case "pixel-painter":
-      gameFrame.src = "games/pixel-painter/index.html";
-      gameTitle.textContent = "Pixel Painter";
-      break;
-    case "typing-speed-race":
-      gameFrame.src = "games/typing-speed-race/index.html";
-      gameTitle.textContent = "Typing Speed Race";
-      break;
-    case "virtual-drum-kit":
-      gameFrame.src = "games/virtual-drum-kit/index.html";
-      gameTitle.textContent = "Virtual Drum Kit";
-      break;
-    case "lofi-visualizer":
-      gameFrame.src = "games/lofi-visualizer/index.html";
-      gameTitle.textContent = "Lo-Fi Visualiser";
-      break;
-    case "memory-match":
-      gameFrame.src = "games/memory-match/index.html";
-      gameTitle.textContent = "Memory Match";
-      break;
-    case "archery":
-      gameFrame.src = "games/archery/index.html";
-      gameTitle.textContent = "Archery";
-      break;
-    case "shooting-gallery":
-      gameFrame.src = "games/shooting-gallery/index.html";
-      gameTitle.textContent = "Shooting Gallery";
-      break;
-    case "snake":
-      gameFrame.src = "games/snake/index.html";
-      gameTitle.textContent = "Snake";
-      break;
-    default:
-      console.error("Unknown game type:", gameType);
-  }
+  document.getElementById("game-frame").src = game.src;
+  document.getElementById("current-game-title").textContent = game.title;
 }
 
 function returnToMenu() {
-  const gameMenu = document.querySelector(".game-menu");
-  const gameContainer = document.getElementById("game-container");
-  const gameFrame = document.getElementById("game-frame");
+  if (document.fullscreenElement) document.exitFullscreen();
 
-  if (document.fullscreenElement) {
-    document.exitFullscreen();
-  }
-
-  gameContainer.style.display = "none";
-  gameMenu.style.display = "grid";
-  gameFrame.src = "";
+  document.getElementById("game-container").style.display = "none";
+  document.getElementById("game-frame").src = "";
+  document.querySelector("header").style.display = "";
+  document.querySelector(".controls").style.display = "";
+  document.getElementById("game-menu").style.display = "";
+  filterGames();
 }
 
 function toggleFullscreen() {
   const gameContainer = document.getElementById("game-container");
-  const fullscreenBtn = document.getElementById("fullscreen-btn");
-
   if (!document.fullscreenElement) {
-    gameContainer
-      .requestFullscreen()
-      .then(() => {
-        fullscreenBtn.textContent = "🗗 Exit Fullscreen";
-      })
-      .catch((err) => {
-        console.error("Error attempting to enable fullscreen:", err);
-      });
+    gameContainer.requestFullscreen().catch((err) => console.error(err));
   } else {
-    document
-      .exitFullscreen()
-      .then(() => {
-        fullscreenBtn.textContent = "🔳 Fullscreen";
-      })
-      .catch((err) => {
-        console.error("Error attempting to exit fullscreen:", err);
-      });
+    document.exitFullscreen().catch((err) => console.error(err));
   }
 }
 
 if (typeof document !== "undefined") {
   document.addEventListener("fullscreenchange", () => {
-    const fullscreenBtn = document.getElementById("fullscreen-btn");
-    if (document.fullscreenElement) {
-      fullscreenBtn.textContent = "🗗 Exit Fullscreen";
-    } else {
-      fullscreenBtn.textContent = "🔳 Fullscreen";
-    }
+    const btn = document.getElementById("fullscreen-btn");
+    if (btn) btn.textContent = document.fullscreenElement ? "🗗 Exit Fullscreen" : "🔳 Fullscreen";
   });
+
+  renderGames();
 }
 
-// Expose functions for testing in Node environments
 if (typeof module !== "undefined") {
   module.exports = { loadGame, returnToMenu, toggleFullscreen };
 }

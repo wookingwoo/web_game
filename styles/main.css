@@ -17,80 +17,184 @@ body {
   padding: 20px;
 }
 
+/* ── Header ── */
 header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 32px;
   color: white;
 }
 
 header h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-header p {
-  font-size: 1.2rem;
-  opacity: 0.9;
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin-bottom: 10px;
 }
 
+.game-count {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 4px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
+/* ── Controls (search + filter) ── */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.search-wrapper {
+  position: relative;
+  max-width: 420px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+#search-input {
+  width: 100%;
+  padding: 12px 16px 12px 42px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 22px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  background: transparent;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.filter-btn.active {
+  background: white;
+  color: #764ba2;
+  border-color: white;
+}
+
+/* ── Game grid ── */
 .game-menu {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 50px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
 }
 
+/* ── Game card ── */
 .game-card {
+  position: relative;
   background: white;
-  border-radius: 15px;
-  padding: 30px;
+  border-radius: 16px;
+  padding: 28px 24px 24px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
 }
 
 .game-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
+}
+
+.category-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 3px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .game-icon {
-  font-size: 4rem;
-  margin-bottom: 20px;
+  font-size: 3.2rem;
+  margin-bottom: 14px;
 }
 
 .game-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #333;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #222;
 }
 
 .game-card p {
   color: #666;
-  margin-bottom: 20px;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+  line-height: 1.55;
+  min-height: 42px;
 }
 
 .game-card button {
   background: linear-gradient(45deg, #667eea, #764ba2);
   color: white;
   border: none;
-  padding: 12px 30px;
-  border-radius: 25px;
-  font-size: 1rem;
+  padding: 10px 28px;
+  border-radius: 22px;
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
 .game-card button:hover {
-  transform: scale(1.05);
+  transform: scale(1.06);
+  opacity: 0.92;
 }
 
+/* ── No results ── */
+.no-results {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1rem;
+  padding: 40px 0;
+}
+
+/* ── Game viewer ── */
 #game-container {
   background: white;
-  border-radius: 15px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
@@ -98,20 +202,33 @@ header p {
 .game-header {
   display: flex;
   align-items: center;
-  padding: 20px;
+  gap: 16px;
+  padding: 16px 20px;
   background: #f8f9fa;
   border-bottom: 1px solid #dee2e6;
+}
+
+#current-game-title {
+  flex: 1;
+  text-align: center;
+  color: #333;
+  font-size: 1.15rem;
+}
+
+#back-btn,
+#fullscreen-btn {
+  border: none;
+  padding: 9px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+  white-space: nowrap;
 }
 
 #back-btn {
   background: #6c757d;
   color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  margin-right: 20px;
-  transition: background 0.2s ease;
 }
 
 #back-btn:hover {
@@ -119,32 +236,22 @@ header p {
 }
 
 #fullscreen-btn {
-  background: #007bff;
+  background: #667eea;
   color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  margin-right: auto;
-  margin-left: 20px;
-  transition: background 0.2s ease;
-  font-size: 0.9rem;
 }
 
 #fullscreen-btn:hover {
-  background: #0056b3;
-}
-
-#current-game-title {
-  color: #333;
+  background: #5568d4;
 }
 
 #game-frame {
   width: 100%;
   height: 800px;
   border: none;
+  display: block;
 }
 
+/* ── Fullscreen ── */
 #game-container:fullscreen {
   background: black;
   width: 100vw;
@@ -171,18 +278,15 @@ header p {
 #game-container:fullscreen #fullscreen-btn {
   background: rgba(255, 255, 255, 0.2);
   color: white;
-  padding: 8px 16px;
-  font-size: 0.8rem;
 }
 
 #game-container:fullscreen #back-btn:hover,
 #game-container:fullscreen #fullscreen-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.35);
 }
 
 #game-container:fullscreen #current-game-title {
   color: white;
-  font-size: 1.2rem;
 }
 
 #game-container:fullscreen #game-frame {
@@ -191,5 +295,25 @@ header p {
   left: 0;
   width: 100vw;
   height: 100vh;
-  border: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .game-menu {
+    grid-template-columns: 1fr;
+  }
+
+  .game-header {
+    flex-wrap: wrap;
+  }
+
+  #current-game-title {
+    order: -1;
+    width: 100%;
+    text-align: left;
+  }
 }
