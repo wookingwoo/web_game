@@ -14,6 +14,7 @@ All games run directly in the browser with no installation or login required. Th
 - [Snake](https://game.wookingwoo.com/games/snake/): Classic snake game with neon visuals and difficulty selection
 - [Archery](https://game.wookingwoo.com/games/archery/): Draw a bow and hit targets with precision
 - [Shooting Gallery](https://game.wookingwoo.com/games/shooting-gallery/): Arcade-style target shooting game
+- [Slot Machine](https://game.wookingwoo.com/games/slot-machine/): Classic casino slot machine with spinning reels and jackpot rewards
 
 ## Puzzle Games
 

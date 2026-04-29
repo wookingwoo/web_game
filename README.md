@@ -16,6 +16,9 @@ Avoid falling objects and survive as long as you can! A fun survival game.
 ### 🐸 Crossy Road
 Navigate through traffic and obstacles in this classic arcade-style game.
 
+### 🎰 Slot Machine
+Spin the reels and test your luck! Classic casino-style slot machine with jackpot rewards.
+
 ### ⚽ Jumping Ball Runner
 Keep a ball rolling and jump over obstacles in this simple runner game.
 

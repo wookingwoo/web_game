@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Machine | Mini Game Collection</title>
+    <meta name="description" content="Spin the reels and win big! Classic casino slot machine game with jackpot rewards. Free to play in your browser." />
+    <link rel="canonical" href="https://game.wookingwoo.com/games/slot-machine/" />
+    <meta property="og:title" content="Slot Machine | Mini Game Collection" />
+    <meta property="og:description" content="Spin the reels and win big! Classic casino slot machine game with jackpot rewards. Free to play in your browser." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://game.wookingwoo.com/games/slot-machine/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Slot Machine | Mini Game Collection" />
+    <meta name="twitter:description" content="Spin the reels and win big! Classic casino slot machine game with jackpot rewards. Free to play in your browser." />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🎰 SLOT MACHINE</h1>
+            <p class="subtitle">NEON CASINO</p>
+        </div>
+
+        <!-- 시작 화면 -->
+        <div id="startScreen" class="screen">
+            <div class="welcome-box">
+                <h2>🎰 Welcome to Neon Slots!</h2>
+                <p class="welcome-text">Try your luck and hit the jackpot!</p>
+                
+                <div class="starting-coins">
+                    <span class="coin-icon">💰</span>
+                    <span>Starting Coins: <strong>100</strong></span>
+                </div>
+
+                <div class="paytable">
+                    <h3>💎 Paytable 💎</h3>
+                    <div class="paytable-row jackpot">
+                        <span>7️⃣ 7️⃣ 7️⃣</span>
+                        <span class="multiplier">x20 JACKPOT!</span>
+                    </div>
+                    <div class="paytable-row">
+                        <span>💎 💎 💎</span>
+                        <span class="multiplier">x15</span>
+                    </div>
+                    <div class="paytable-row">
+                        <span>⭐ ⭐ ⭐</span>
+                        <span class="multiplier">x10</span>
+                    </div>
+                    <div class="paytable-row">
+                        <span>🍇 🍇 🍇</span>
+                        <span class="multiplier">x8</span>
+                    </div>
+                    <div class="paytable-row">
+                        <span>🍊 🍊 🍊</span>
+                        <span class="multiplier">x5</span>
+                    </div>
+                    <div class="paytable-row">
+                        <span>🍋 🍋 🍋</span>
+                        <span class="multiplier">x3</span>
+                    </div>
+                    <div class="paytable-row">
+                        <span>🍒 🍒 🍒</span>
+                        <span class="multiplier">x2</span>
+                    </div>
+                    <div class="paytable-row small">
+                        <span>Any 2 Match</span>
+                        <span class="multiplier">x1</span>
+                    </div>
+                </div>
+
+                <button class="start-btn" onclick="startGame()">
+                    <span class="btn-icon">🎲</span>
+                    <span>START GAME</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 게임 플레이 영역 -->
+        <div id="gameArea" class="screen hidden">
+            <div class="game-stats">
+                <div class="stat-box coins">
+                    <span class="stat-label">COINS</span>
+                    <span class="stat-value" id="coins">100</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">BET</span>
+                    <span class="stat-value" id="currentBet">10</span>
+                </div>
+                <div class="stat-box high-score">
+                    <span class="stat-label">BEST</span>
+                    <span class="stat-value" id="highScore">100</span>
+                </div>
+            </div>
+
+            <div class="slot-machine">
+                <div class="machine-frame">
+                    <div class="machine-top">
+                        <div class="jackpot-light" id="jackpotLight1"></div>
+                        <span class="jackpot-text">💎 JACKPOT 💎</span>
+                        <div class="jackpot-light" id="jackpotLight2"></div>
+                    </div>
+                    
+                    <div class="reels-container">
+                        <div class="reel" id="reel1">
+                            <div class="reel-strip" id="reelStrip1">
+                                <div class="symbol">🍒</div>
+                            </div>
+                        </div>
+                        <div class="reel" id="reel2">
+                            <div class="reel-strip" id="reelStrip2">
+                                <div class="symbol">🍋</div>
+                            </div>
+                        </div>
+                        <div class="reel" id="reel3">
+                            <div class="reel-strip" id="reelStrip3">
+                                <div class="symbol">🍊</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="win-line"></div>
+                </div>
+
+                <div class="result-display" id="resultDisplay">
+                    <span id="resultText">Place your bet and SPIN!</span>
+                </div>
+
+                <div class="bet-controls">
+                    <span class="bet-label">BET AMOUNT:</span>
+                    <div class="bet-buttons">
+                        <button class="bet-btn active" data-bet="10" onclick="setBet(10, this)">10</button>
+                        <button class="bet-btn" data-bet="20" onclick="setBet(20, this)">20</button>
+                        <button class="bet-btn" data-bet="50" onclick="setBet(50, this)">50</button>
+                    </div>
+                </div>
+
+                <button class="spin-btn" id="spinBtn" onclick="spin()">
+                    <span class="spin-text">🎰 SPIN!</span>
+                </button>
+
+                <div class="game-controls">
+                    <button class="control-btn" onclick="returnToMenu()">🏠 Menu</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 게임 오버 화면 -->
+        <div id="gameOverScreen" class="screen hidden">
+            <h2 class="game-over-title">GAME OVER</h2>
+            <div class="game-over-icon">💸</div>
+            <p class="game-over-text">You ran out of coins!</p>
+            
+            <div class="final-stats">
+                <div class="final-stat">
+                    <span class="final-label">Highest Coins Reached</span>
+                    <span class="final-value" id="finalHighScore">0</span>
+                </div>
+            </div>
+
+            <div class="game-over-buttons">
+                <button class="restart-btn" onclick="restartGame()">
+                    <span>🔄 Try Again</span>
+                </button>
+                <button class="menu-btn" onclick="returnToMenu()">
+                    <span>🏠 Menu</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

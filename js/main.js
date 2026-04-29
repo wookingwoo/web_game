@@ -64,6 +64,14 @@ const GAMES = [
     src: "games/shooting-gallery/index.html",
   },
   {
+    id: "slot-machine",
+    title: "Slot Machine",
+    icon: "🎰",
+    description: "Spin the reels and win big! Classic casino slot machine.",
+    category: "action",
+    src: "games/slot-machine/index.html",
+  },
+  {
     id: "memory-match",
     title: "Memory Match",
     icon: "🧠",
