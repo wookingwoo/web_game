@@ -64,6 +64,14 @@ const GAMES = [
     src: "games/shooting-gallery/index.html",
   },
   {
+    id: "rock-paper-scissors",
+    title: "Rock Paper Scissors",
+    icon: "✊",
+    description: "Challenge the AI in the classic game of Rock Paper Scissors!",
+    category: "action",
+    src: "games/rock-paper-scissors/index.html",
+  },
+  {
     id: "slot-machine",
     title: "Slot Machine",
     icon: "🎰",
