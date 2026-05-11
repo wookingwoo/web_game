@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
     <meta name="description" content="Play 2048 online for free! Swipe to combine tiles and reach 2048. Classic addictive puzzle game. No download required. Mobile friendly." />
     <meta name="keywords" content="2048, 2048 game, puzzle game, number puzzle, free online game, brain game, mobile game" />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a1a2e" />
     <link rel="canonical" href="https://game.wookingwoo.com/games/2048/" />
     <meta property="og:title" content="2048 Game Online | Free Puzzle Game" />
     <meta property="og:description" content="Play 2048 online for free! Swipe to combine tiles and reach 2048. Classic addictive puzzle game." />
@@ -16,7 +17,10 @@
     <meta name="twitter:title" content="2048 Game Online | Free Puzzle Game" />
     <meta name="twitter:description" content="Play 2048 online for free! Swipe to combine tiles and reach 2048." />
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"VideoGame","name":"2048","description":"Combine numbered tiles to reach 2048","genre":"Puzzle","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    {"@context":"https://schema.org","@type":"VideoGame","name":"2048","description":"Combine numbered tiles to reach 2048","genre":"Puzzle","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","url":"https://game.wookingwoo.com/games/2048/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://game.wookingwoo.com/"},{"@type":"ListItem","position":2,"name":"2048","item":"https://game.wookingwoo.com/games/2048/"}]}
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -24,7 +28,7 @@
     <div class="game-container">
         <div class="game-header">
             <h1>🔢 2048</h1>
-            <p class="subtitle">숫자를 합쳐 2048을 만들어라!</p>
+            <p class="subtitle">Combine tiles to reach 2048!</p>
         </div>
 
         <div class="score-container">
@@ -39,33 +43,32 @@
         </div>
 
         <div class="game-board" id="gameBoard">
-            <!-- 타일들이 여기에 생성됨 -->
         </div>
 
         <div class="controls">
-            <button class="control-btn" onclick="resetGame()">🔄 새 게임</button>
+            <button class="control-btn" onclick="resetGame()">🔄 New Game</button>
         </div>
 
         <div class="instructions">
-            <h3>조작법</h3>
-            <p>⬆️⬇️⬅️➡️ 방향키 또는 WASD로 타일 이동</p>
-            <p>📱 터치 스와이프 지원</p>
+            <h3>Controls</h3>
+            <p>⬆️⬇️⬅️➡️ Arrow Keys or WASD to move tiles</p>
+            <p>📱 Touch swipe supported</p>
         </div>
 
         <div id="gameOverOverlay" class="overlay hidden">
             <div class="overlay-content">
                 <h2>GAME OVER</h2>
-                <p>최종 점수: <span id="finalScore">0</span></p>
-                <button onclick="resetGame()">다시 하기</button>
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <button onclick="resetGame()">Play Again</button>
             </div>
         </div>
 
         <div id="winOverlay" class="overlay hidden">
             <div class="overlay-content">
-                <h2>🎉 축하합니다!</h2>
-                <p>2048을 달성했습니다!</p>
-                <button onclick="continueGame()">계속 하기</button>
-                <button onclick="resetGame()">새 게임</button>
+                <h2>🎉 Congratulations!</h2>
+                <p>You reached 2048!</p>
+                <button onclick="continueGame()">Keep Playing</button>
+                <button onclick="resetGame()">New Game</button>
             </div>
         </div>
     </div>

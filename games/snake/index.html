@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Neon Edition | Mini Game Collection</title>
-    <meta name="description" content="Classic neon snake game with difficulty selection. Grow your snake and avoid the walls!" />
+    <title>Snake Neon Edition Online | Free Arcade Game | Mini Game Collection</title>
+    <meta name="description" content="Classic neon snake game with difficulty selection. Grow your snake and avoid the walls! Free browser game, no download needed." />
+    <meta name="keywords" content="snake game, snake online, neon snake, classic snake, arcade game, free online game, browser game" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a1a2e" />
     <link rel="canonical" href="https://game.wookingwoo.com/games/snake/" />
-    <meta property="og:title" content="Snake Neon Edition | Mini Game Collection" />
+    <meta property="og:title" content="Snake Neon Edition Online | Free Arcade Game" />
     <meta property="og:description" content="Classic neon snake game with difficulty selection. Grow your snake and avoid the walls!" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://game.wookingwoo.com/games/snake/" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Snake Neon Edition | Mini Game Collection" />
+    <meta name="twitter:title" content="Snake Neon Edition Online | Free Arcade Game" />
     <meta name="twitter:description" content="Classic neon snake game with difficulty selection. Grow your snake and avoid the walls!" />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Snake Neon Edition","description":"Classic neon snake game with difficulty selection","genre":"Arcade","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","url":"https://game.wookingwoo.com/games/snake/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://game.wookingwoo.com/"},{"@type":"ListItem","position":2,"name":"Snake","item":"https://game.wookingwoo.com/games/snake/"}]}
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,7 +31,6 @@
             <p class="subtitle">NEON EDITION</p>
         </div>
 
-        <!-- 시작 화면 -->
         <div id="startScreen" class="screen">
             <h2>Select Difficulty</h2>
             <div class="difficulty-options">
@@ -49,7 +57,6 @@
             </div>
         </div>
 
-        <!-- 게임 플레이 영역 -->
         <div id="gameArea" class="screen hidden">
             <div class="game-stats">
                 <div class="stat-box">
@@ -68,8 +75,7 @@
 
             <div class="canvas-container">
                 <canvas id="gameCanvas" width="400" height="400"></canvas>
-                
-                <!-- 일시정지 오버레이 -->
+
                 <div id="pauseOverlay" class="overlay hidden">
                     <h2>⏸️ PAUSED</h2>
                     <p>Press P to Resume</p>
@@ -82,7 +88,6 @@
             </div>
         </div>
 
-        <!-- 게임 오버 화면 -->
         <div id="gameOverScreen" class="screen hidden">
             <h2 class="game-over-title">GAME OVER</h2>
             <div class="final-stats">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
     <meta name="description" content="Play Number Guessing online! Guess the secret number 1-100 with hints. Up and down game. Track your best attempts. Free logic game." />
     <meta name="keywords" content="number guessing, up down game, guess the number, higher lower, logic game, number game, free online game" />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a1a2e" />
     <link rel="canonical" href="https://game.wookingwoo.com/games/number-guessing/" />
     <meta property="og:title" content="Number Guessing Game | Up Down Game" />
     <meta property="og:description" content="Play Number Guessing online! Guess the secret number 1-100 with hints." />
@@ -16,39 +17,42 @@
     <meta name="twitter:title" content="Number Guessing Game | Up Down Game" />
     <meta name="twitter:description" content="Play Number Guessing online! Free logic game." />
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"VideoGame","name":"Number Guessing","description":"Guess the number with up/down hints","genre":"Puzzle","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Number Guessing","description":"Guess the number with up/down hints","genre":"Puzzle","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","url":"https://game.wookingwoo.com/games/number-guessing/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://game.wookingwoo.com/"},{"@type":"ListItem","position":2,"name":"Number Guessing","item":"https://game.wookingwoo.com/games/number-guessing/"}]}
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-container">
         <div class="game-header">
-            <h1>🔢 업다운</h1>
-            <p class="subtitle">NUMBER GUESSING</p>
+            <h1>🔢 NUMBER GUESSING</h1>
+            <p class="subtitle">Up &amp; Down</p>
         </div>
 
         <div class="game-info">
             <div class="info-box">
-                <span class="info-label">시도</span>
+                <span class="info-label">Attempts</span>
                 <span id="attempts" class="info-value">0</span>
             </div>
             <div class="info-box">
-                <span class="info-label">범위</span>
+                <span class="info-label">Range</span>
                 <span id="range" class="info-value">1-100</span>
             </div>
             <div class="info-box">
-                <span class="info-label">최고기록</span>
+                <span class="info-label">Best</span>
                 <span id="bestScore" class="info-value">-</span>
             </div>
         </div>
 
-        <div id="hint" class="hint">1~100 사이의 숫자를 맞춰보세요!</div>
+        <div id="hint" class="hint">Guess a number between 1 and 100!</div>
 
         <div class="guess-history" id="guessHistory"></div>
 
         <div class="input-section">
-            <input type="number" id="guessInput" min="1" max="100" placeholder="숫자 입력">
-            <button id="guessBtn" onclick="makeGuess()">확인</button>
+            <input type="number" id="guessInput" min="1" max="100" placeholder="Enter number">
+            <button id="guessBtn" onclick="makeGuess()">Guess</button>
         </div>
 
         <div class="number-pad">
@@ -66,15 +70,15 @@
             <button class="num-btn enter" onclick="makeGuess()">⏎</button>
         </div>
 
-        <button class="restart-btn" onclick="resetGame()">🔄 새 게임</button>
+        <button class="restart-btn" onclick="resetGame()">🔄 New Game</button>
 
         <div id="winOverlay" class="overlay hidden">
             <div class="overlay-content">
-                <h2>🎉 정답!</h2>
-                <p>숫자는 <span id="answer">0</span>이었습니다!</p>
-                <p><span id="finalAttempts">0</span>번 만에 맞추셨습니다!</p>
-                <p id="newRecord" class="hidden">🏆 새로운 기록!</p>
-                <button onclick="resetGame()">다시 하기</button>
+                <h2>🎉 Correct!</h2>
+                <p>The number was <span id="answer">0</span>!</p>
+                <p>You got it in <span id="finalAttempts">0</span> attempts!</p>
+                <p id="newRecord" class="hidden">🏆 New Record!</p>
+                <button onclick="resetGame()">Play Again</button>
             </div>
         </div>
     </div>

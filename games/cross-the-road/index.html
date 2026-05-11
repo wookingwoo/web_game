@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cross the Road | Mini Game Collection</title>
-    <meta name="description" content="Help the character safely cross busy roads full of traffic. How far can you go?" />
+    <title>Cross the Road Online | Free Arcade Game | Mini Game Collection</title>
+    <meta name="description" content="Help the character safely cross busy roads full of traffic. How far can you go? Free browser arcade game, no download required." />
+    <meta name="keywords" content="cross the road, road crossing game, frogger, arcade game, traffic game, free online game, browser game" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a1a2e" />
     <link rel="canonical" href="https://game.wookingwoo.com/games/cross-the-road/" />
-    <meta property="og:title" content="Cross the Road | Mini Game Collection" />
+    <meta property="og:title" content="Cross the Road Online | Free Arcade Game" />
     <meta property="og:description" content="Help the character safely cross busy roads full of traffic. How far can you go?" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://game.wookingwoo.com/games/cross-the-road/" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Cross the Road | Mini Game Collection" />
-    <meta name="twitter:description" content="Help the character safely cross busy roads full of traffic. How far can you go?" />
+    <meta name="twitter:title" content="Cross the Road Online | Free Arcade Game" />
+    <meta name="twitter:description" content="Help the character safely cross busy roads full of traffic!" />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Cross the Road","description":"Help the character cross busy roads safely","genre":"Arcade","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","url":"https://game.wookingwoo.com/games/cross-the-road/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://game.wookingwoo.com/"},{"@type":"ListItem","position":2,"name":"Cross the Road","item":"https://game.wookingwoo.com/games/cross-the-road/"}]}
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,26 +30,26 @@
             <div class="score">Score: <span id="score">0</span></div>
             <div class="level">Level: <span id="level">1</span></div>
         </div>
-        
+
         <canvas id="gameCanvas" width="800" height="600"></canvas>
-        
+
         <div id="gameOver" class="game-over hidden">
             <h2>Game Over!</h2>
             <p>Final Score: <span id="finalScore">0</span></p>
             <button onclick="restartGame()">Play Again</button>
         </div>
-        
+
         <div id="levelComplete" class="level-complete hidden">
             <h2>Level Complete!</h2>
             <p>Great job crossing the road!</p>
             <button onclick="nextLevel()">Next Level</button>
         </div>
-        
+
         <div class="controls">
             <p>Use ARROW KEYS or WASD to move the chicken</p>
         </div>
     </div>
-    
+
     <script src="game.js"></script>
 </body>
 </html>

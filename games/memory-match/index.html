@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Match | Mini Game Collection</title>
-    <meta name="description" content="Flip cards and find all matching pairs in this classic memory card game. Train your brain!" />
+    <title>Memory Match Online | Free Card Matching Game | Mini Game Collection</title>
+    <meta name="description" content="Flip cards and find all matching pairs in this classic memory card game. Train your brain! Free browser game, no download needed." />
+    <meta name="keywords" content="memory match, card matching, memory game, concentration game, brain training, free online game, browser game" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a1a2e" />
     <link rel="canonical" href="https://game.wookingwoo.com/games/memory-match/" />
-    <meta property="og:title" content="Memory Match | Mini Game Collection" />
+    <meta property="og:title" content="Memory Match Online | Free Card Matching Game" />
     <meta property="og:description" content="Flip cards and find all matching pairs in this classic memory card game. Train your brain!" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://game.wookingwoo.com/games/memory-match/" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Memory Match | Mini Game Collection" />
-    <meta name="twitter:description" content="Flip cards and find all matching pairs in this classic memory card game. Train your brain!" />
+    <meta name="twitter:title" content="Memory Match Online | Free Card Matching Game" />
+    <meta name="twitter:description" content="Flip cards and find all matching pairs in this classic memory card game!" />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Memory Match","description":"Classic card matching memory game","genre":"Puzzle","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","url":"https://game.wookingwoo.com/games/memory-match/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://game.wookingwoo.com/"},{"@type":"ListItem","position":2,"name":"Memory Match","item":"https://game.wookingwoo.com/games/memory-match/"}]}
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,28 +31,28 @@
             <div class="matches">Matches: <span id="matches">0</span>/8</div>
             <div class="timer">Time: <span id="timer">0</span>s</div>
         </div>
-        
+
         <div id="gameBoard" class="game-board"></div>
-        
+
         <div id="gameOver" class="game-over hidden">
             <h2>Congratulations!</h2>
             <p>You completed the game in <span id="finalMoves">0</span> moves!</p>
             <p>Time: <span id="finalTime">0</span> seconds</p>
             <button onclick="restartGame()">Play Again</button>
         </div>
-        
+
         <div id="startScreen" class="start-screen">
             <h2>Memory Match Game</h2>
             <p>Find all matching pairs of cards!</p>
             <p>Click on cards to flip them and find matches.</p>
             <button onclick="startGame()">Start Game</button>
         </div>
-        
+
         <div class="controls">
             <button onclick="restartGame()">Restart</button>
         </div>
     </div>
-    
+
     <script src="game.js"></script>
 </body>
 </html>

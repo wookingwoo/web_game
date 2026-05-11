@@ -3,16 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pixel Painter | Mini Game Collection</title>
-  <meta name="description" content="Draw retro-style pixel art on a grid canvas. Create 8-bit masterpieces in your browser!" />
+  <title>Pixel Painter Online | Free Pixel Art Creator | Mini Game Collection</title>
+  <meta name="description" content="Draw retro-style pixel art on a grid canvas. Create 8-bit masterpieces in your browser! Free online pixel art tool, no download needed." />
+  <meta name="keywords" content="pixel painter, pixel art, pixel drawing, 8-bit art, retro art, pixel editor, free online tool, creative game" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1a1a2e" />
   <link rel="canonical" href="https://game.wookingwoo.com/games/pixel-painter/" />
-  <meta property="og:title" content="Pixel Painter | Mini Game Collection" />
+  <meta property="og:title" content="Pixel Painter Online | Free Pixel Art Creator" />
   <meta property="og:description" content="Draw retro-style pixel art on a grid canvas. Create 8-bit masterpieces in your browser!" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://game.wookingwoo.com/games/pixel-painter/" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Pixel Painter | Mini Game Collection" />
-  <meta name="twitter:description" content="Draw retro-style pixel art on a grid canvas. Create 8-bit masterpieces in your browser!" />
+  <meta name="twitter:title" content="Pixel Painter Online | Free Pixel Art Creator" />
+  <meta name="twitter:description" content="Draw retro-style pixel art on a grid canvas. Create 8-bit masterpieces!" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"VideoGame","name":"Pixel Painter","description":"Retro-style pixel art creation tool","genre":"Creative","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","url":"https://game.wookingwoo.com/games/pixel-painter/"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://game.wookingwoo.com/"},{"@type":"ListItem","position":2,"name":"Pixel Painter","item":"https://game.wookingwoo.com/games/pixel-painter/"}]}
+  </script>
   <link rel="stylesheet" href="painter.css" />
 </head>
 <body>
@@ -50,7 +59,7 @@
           <div id="bg-display" class="color-display" title="Background color"></div>
           <button id="swap-colors" title="Swap colors" aria-label="Swap colors">⇅</button>
         </div>
-        <div id="swatches"><!-- palette buttons inserted by script --></div>
+        <div id="swatches"></div>
       </div>
       <div class="canvas-wrapper">
         <canvas id="grid" width="512" height="512"></canvas>

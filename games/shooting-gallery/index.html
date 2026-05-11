@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shooting Gallery | Mini Game Collection</title>
-    <meta name="description" content="Aim and shoot targets in this arcade-style browser shooting game. Beat the clock!" />
+    <title>Shooting Gallery Online | Free Target Game | Mini Game Collection</title>
+    <meta name="description" content="Aim and shoot targets in this arcade-style browser shooting game. Beat the clock! Free online game, no download required." />
+    <meta name="keywords" content="shooting gallery, target shooting, aim game, arcade game, shooting game, browser game, free online game" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a1a2e" />
     <link rel="canonical" href="https://game.wookingwoo.com/games/shooting-gallery/" />
-    <meta property="og:title" content="Shooting Gallery | Mini Game Collection" />
+    <meta property="og:title" content="Shooting Gallery Online | Free Target Game" />
     <meta property="og:description" content="Aim and shoot targets in this arcade-style browser shooting game. Beat the clock!" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://game.wookingwoo.com/games/shooting-gallery/" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Shooting Gallery | Mini Game Collection" />
-    <meta name="twitter:description" content="Aim and shoot targets in this arcade-style browser shooting game. Beat the clock!" />
+    <meta name="twitter:title" content="Shooting Gallery Online | Free Target Game" />
+    <meta name="twitter:description" content="Aim and shoot targets in this arcade-style shooting game!" />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Shooting Gallery","description":"Aim and shoot targets in this arcade-style game","genre":"Action","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","url":"https://game.wookingwoo.com/games/shooting-gallery/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://game.wookingwoo.com/"},{"@type":"ListItem","position":2,"name":"Shooting Gallery","item":"https://game.wookingwoo.com/games/shooting-gallery/"}]}
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,13 +32,13 @@
             <div class="ammo">Ammo: <span id="ammo">15</span></div>
             <div class="time">Time: <span id="time">30</span>s</div>
         </div>
-        
+
         <canvas id="gameCanvas" width="800" height="500"></canvas>
-        
+
         <div class="timer-bar-container">
             <div class="timer-bar" id="timerBar"></div>
         </div>
-        
+
         <div id="startScreen" class="start-screen">
             <h2>🎯 Shooting Gallery</h2>
             <p>Hit the targets to score points!</p>
@@ -43,26 +52,26 @@
             <p class="instruction">Click to shoot!</p>
             <button onclick="game.startGame()">Start Game</button>
         </div>
-        
+
         <div id="gameOverScreen" class="game-over hidden">
             <h2>Game Over!</h2>
             <p>Final Score: <span id="finalScore">0</span></p>
             <p>Accuracy: <span id="accuracy">0</span>%</p>
             <button onclick="game.restartGame()">Play Again</button>
         </div>
-        
+
         <div id="roundScreen" class="round-screen hidden">
             <h2>Round <span id="roundNumber">1</span> Complete!</h2>
             <p>Round Score: <span id="roundScore">0</span></p>
             <p>Hits: <span id="roundHits">0</span> / <span id="roundShots">0</span></p>
             <button onclick="game.nextRound()">Next Round</button>
         </div>
-        
+
         <div class="controls">
             <p>🎯 Move mouse to aim • Click to shoot</p>
         </div>
     </div>
-    
+
     <script src="game.js"></script>
 </body>
 </html>

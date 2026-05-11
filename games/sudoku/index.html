@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
     <meta name="description" content="Play Sudoku online for free! Classic 9x9 number puzzle with Easy, Medium, Hard levels. Hints available. No download required." />
     <meta name="keywords" content="sudoku, sudoku online, sudoku puzzle, number puzzle, brain game, logic puzzle, free sudoku" />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a1a2e" />
     <link rel="canonical" href="https://game.wookingwoo.com/games/sudoku/" />
     <meta property="og:title" content="Sudoku Online | Free Puzzle Game" />
     <meta property="og:description" content="Play Sudoku online for free! Classic 9x9 number puzzle with multiple difficulty levels." />
@@ -16,21 +17,24 @@
     <meta name="twitter:title" content="Sudoku Online | Free Puzzle Game" />
     <meta name="twitter:description" content="Play Sudoku online for free! Classic 9x9 number puzzle." />
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"VideoGame","name":"Sudoku","description":"Classic 9x9 number puzzle game","genre":"Puzzle","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Sudoku","description":"Classic 9x9 number puzzle game","genre":"Puzzle","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","url":"https://game.wookingwoo.com/games/sudoku/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://game.wookingwoo.com/"},{"@type":"ListItem","position":2,"name":"Sudoku","item":"https://game.wookingwoo.com/games/sudoku/"}]}
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-container">
         <div class="game-header">
-            <h1>🔢 스도쿠</h1>
-            <p class="subtitle">SUDOKU</p>
+            <h1>🔢 SUDOKU</h1>
+            <p class="subtitle">Classic Number Puzzle</p>
         </div>
 
         <div class="difficulty-selector">
-            <button class="diff-btn active" data-difficulty="easy">쉬움</button>
-            <button class="diff-btn" data-difficulty="medium">보통</button>
-            <button class="diff-btn" data-difficulty="hard">어려움</button>
+            <button class="diff-btn active" data-difficulty="easy">Easy</button>
+            <button class="diff-btn" data-difficulty="medium">Medium</button>
+            <button class="diff-btn" data-difficulty="hard">Hard</button>
         </div>
 
         <div class="game-info">
@@ -62,24 +66,24 @@
         </div>
 
         <div class="controls">
-            <button class="control-btn" onclick="newGame()">🔄 새 게임</button>
-            <button class="control-btn hint-btn" onclick="getHint()">💡 힌트</button>
+            <button class="control-btn" onclick="newGame()">🔄 New Game</button>
+            <button class="control-btn hint-btn" onclick="getHint()">💡 Hint</button>
         </div>
 
         <div id="winOverlay" class="overlay hidden">
             <div class="overlay-content">
-                <h2>🎉 축하합니다!</h2>
-                <p>퍼즐을 완성했습니다!</p>
-                <p>시간: <span id="finalTime">00:00</span></p>
-                <button onclick="newGame()">새 게임</button>
+                <h2>🎉 Congratulations!</h2>
+                <p>Puzzle complete!</p>
+                <p>Time: <span id="finalTime">00:00</span></p>
+                <button onclick="newGame()">New Game</button>
             </div>
         </div>
 
         <div id="gameOverOverlay" class="overlay hidden">
             <div class="overlay-content">
-                <h2>😢 게임 오버</h2>
-                <p>3번 실수했습니다!</p>
-                <button onclick="newGame()">다시 하기</button>
+                <h2>😢 Game Over</h2>
+                <p>3 mistakes — better luck next time!</p>
+                <button onclick="newGame()">Play Again</button>
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
     <meta name="description" content="Play Tic-Tac-Toe online for free! Challenge the AI or play with a friend. 3 difficulty levels. Classic X and O game." />
     <meta name="keywords" content="tic tac toe, tic-tac-toe online, noughts and crosses, X O game, two player game, AI game, free online game" />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a1a2e" />
     <link rel="canonical" href="https://game.wookingwoo.com/games/tic-tac-toe/" />
     <meta property="og:title" content="Tic-Tac-Toe Online | Play vs AI or Friend" />
     <meta property="og:description" content="Play Tic-Tac-Toe online for free! Challenge the AI or play with a friend." />
@@ -16,20 +17,23 @@
     <meta name="twitter:title" content="Tic-Tac-Toe Online | Play vs AI or Friend" />
     <meta name="twitter:description" content="Play Tic-Tac-Toe online for free! Challenge the AI or play with a friend." />
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"VideoGame","name":"Tic-Tac-Toe","description":"Classic X and O game with AI opponent","genre":"Strategy","playMode":["SinglePlayer","MultiPlayer"],"applicationCategory":"Game","operatingSystem":"Web Browser"}
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Tic-Tac-Toe","description":"Classic X and O game with AI opponent","genre":"Strategy","playMode":["SinglePlayer","MultiPlayer"],"applicationCategory":"Game","operatingSystem":"Web Browser","url":"https://game.wookingwoo.com/games/tic-tac-toe/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://game.wookingwoo.com/"},{"@type":"ListItem","position":2,"name":"Tic-Tac-Toe","item":"https://game.wookingwoo.com/games/tic-tac-toe/"}]}
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-container">
         <div class="game-header">
-            <h1>⭕❌ 틱택토</h1>
-            <p class="subtitle">TIC-TAC-TOE</p>
+            <h1>⭕❌ TIC-TAC-TOE</h1>
+            <p class="subtitle">X vs O</p>
         </div>
 
         <div class="mode-selector">
             <button class="mode-btn active" data-mode="ai">🤖 vs AI</button>
-            <button class="mode-btn" data-mode="2p">👥 2인 대전</button>
+            <button class="mode-btn" data-mode="2p">👥 2 Players</button>
         </div>
 
         <div class="game-info">
@@ -40,7 +44,7 @@
             </div>
             <div class="player-info draw">
                 <span class="player-symbol">➖</span>
-                <span class="player-name">무승부</span>
+                <span class="player-name">Draw</span>
                 <span id="scoreDraw" class="player-score">0</span>
             </div>
             <div class="player-info player-o">
@@ -50,7 +54,7 @@
             </div>
         </div>
 
-        <div id="status" class="status">❌ 차례입니다</div>
+        <div id="status" class="status">❌ Your turn</div>
 
         <div class="board" id="board">
             <div class="cell" data-index="0"></div>
@@ -64,14 +68,14 @@
             <div class="cell" data-index="8"></div>
         </div>
 
-        <button class="restart-btn" onclick="resetGame()">🔄 새 게임</button>
+        <button class="restart-btn" onclick="resetGame()">🔄 New Game</button>
 
         <div class="difficulty-selector" id="difficultySelector">
-            <p>AI 난이도</p>
+            <p>AI Difficulty</p>
             <div class="difficulty-buttons">
-                <button class="diff-btn" data-diff="easy">쉬움</button>
-                <button class="diff-btn active" data-diff="medium">보통</button>
-                <button class="diff-btn" data-diff="hard">어려움</button>
+                <button class="diff-btn" data-diff="easy">Easy</button>
+                <button class="diff-btn active" data-diff="medium">Medium</button>
+                <button class="diff-btn" data-diff="hard">Hard</button>
             </div>
         </div>
     </div>

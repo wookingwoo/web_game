@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
     <meta name="description" content="Play Hangman online for free! Guess the word letter by letter. Multiple categories. Classic word guessing game for all ages." />
     <meta name="keywords" content="hangman, hangman game, word game, guessing game, vocabulary game, free online game, educational game" />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a1a2e" />
     <link rel="canonical" href="https://game.wookingwoo.com/games/hangman/" />
     <meta property="og:title" content="Hangman Game Online | Word Guessing" />
     <meta property="og:description" content="Play Hangman online for free! Guess the word letter by letter. Multiple categories." />
@@ -16,24 +17,27 @@
     <meta name="twitter:title" content="Hangman Game Online | Word Guessing" />
     <meta name="twitter:description" content="Play Hangman online for free! Classic word guessing game." />
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"VideoGame","name":"Hangman","description":"Classic word guessing game","genre":"Word Game","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Hangman","description":"Classic word guessing game","genre":"Word Game","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","url":"https://game.wookingwoo.com/games/hangman/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://game.wookingwoo.com/"},{"@type":"ListItem","position":2,"name":"Hangman","item":"https://game.wookingwoo.com/games/hangman/"}]}
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-container">
         <div class="game-header">
-            <h1>😵 행맨</h1>
-            <p class="subtitle">HANGMAN</p>
+            <h1>😵 HANGMAN</h1>
+            <p class="subtitle">Word Guessing Game</p>
         </div>
 
         <div class="game-info">
             <div class="info-box">
-                <span class="info-label">카테고리</span>
+                <span class="info-label">Category</span>
                 <span id="category" class="info-value">-</span>
             </div>
             <div class="info-box">
-                <span class="info-label">남은 기회</span>
+                <span class="info-label">Chances Left</span>
                 <span id="lives" class="info-value">6</span>
             </div>
         </div>
@@ -48,7 +52,7 @@
                 <line x1="60" y1="20" x2="140" y2="20" stroke="#ecf0f1" stroke-width="4"/>
                 <!-- Rope -->
                 <line x1="140" y1="20" x2="140" y2="50" stroke="#ecf0f1" stroke-width="4"/>
-                
+
                 <!-- Body parts (hidden by default) -->
                 <circle id="head" cx="140" cy="70" r="20" stroke="#e74c3c" stroke-width="4" fill="none" class="hidden"/>
                 <line id="body" x1="140" y1="90" x2="140" y2="150" stroke="#e74c3c" stroke-width="4" class="hidden"/>
@@ -100,13 +104,13 @@
             </div>
         </div>
 
-        <button class="restart-btn" onclick="startNewGame()">🔄 새 게임</button>
+        <button class="restart-btn" onclick="startNewGame()">🔄 New Game</button>
 
         <div id="gameOverOverlay" class="overlay hidden">
             <div class="overlay-content">
                 <h2 id="resultTitle">😢 Game Over</h2>
-                <p>정답: <span id="correctWord">WORD</span></p>
-                <button onclick="startNewGame()">다시 하기</button>
+                <p>Answer: <span id="correctWord">WORD</span></p>
+                <button onclick="startNewGame()">Play Again</button>
             </div>
         </div>
     </div>

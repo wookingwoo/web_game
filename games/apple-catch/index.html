@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apple Catch | Mini Game Collection</title>
-    <meta name="description" content="Catch falling apples with your basket before they hit the ground. A fun reflex browser game!" />
+    <title>Apple Catch Online | Free Reflex Game | Mini Game Collection</title>
+    <meta name="description" content="Catch falling apples with your basket before they hit the ground! A fun reflex browser game. No download required." />
+    <meta name="keywords" content="apple catch, catching game, reflex game, basket game, free online game, arcade game, browser game" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a1a2e" />
     <link rel="canonical" href="https://game.wookingwoo.com/games/apple-catch/" />
-    <meta property="og:title" content="Apple Catch | Mini Game Collection" />
+    <meta property="og:title" content="Apple Catch Online | Free Reflex Game" />
     <meta property="og:description" content="Catch falling apples with your basket before they hit the ground. A fun reflex browser game!" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://game.wookingwoo.com/games/apple-catch/" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Apple Catch | Mini Game Collection" />
-    <meta name="twitter:description" content="Catch falling apples with your basket before they hit the ground. A fun reflex browser game!" />
+    <meta name="twitter:title" content="Apple Catch Online | Free Reflex Game" />
+    <meta name="twitter:description" content="Catch falling apples with your basket before they hit the ground!" />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Apple Catch","description":"Catch falling apples with your basket reflex game","genre":"Arcade","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","url":"https://game.wookingwoo.com/games/apple-catch/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://game.wookingwoo.com/"},{"@type":"ListItem","position":2,"name":"Apple Catch","item":"https://game.wookingwoo.com/games/apple-catch/"}]}
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,27 +31,27 @@
             <div class="lives">Lives: <span id="lives">3</span></div>
             <div class="level">Level: <span id="level">1</span></div>
         </div>
-        
+
         <canvas id="gameCanvas" width="800" height="600"></canvas>
-        
+
         <div id="gameOver" class="game-over hidden">
             <h2>Game Over!</h2>
             <p>Final Score: <span id="finalScore">0</span></p>
             <button onclick="restartGame()">Play Again</button>
         </div>
-        
+
         <div id="startScreen" class="start-screen">
             <h2>Apple Catch Game</h2>
             <p>Catch falling apples with your basket!</p>
             <p>Use LEFT/RIGHT ARROW KEYS or A/D to move</p>
             <button onclick="startGame()">Start Game</button>
         </div>
-        
+
         <div class="controls">
             <p>Use ARROW KEYS or A/D to move the basket</p>
         </div>
     </div>
-    
+
     <script src="game.js"></script>
 </body>
 </html>

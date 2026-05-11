@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
     <meta name="description" content="Play Flappy Bird online for free! Tap to fly through pipes. Addictive arcade game. No download required. Play on mobile & desktop." />
     <meta name="keywords" content="flappy bird, flappy bird online, flying game, arcade game, tap game, free online game, mobile game" />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a1a2e" />
     <link rel="canonical" href="https://game.wookingwoo.com/games/flappy-bird/" />
     <meta property="og:title" content="Flappy Bird Online | Free Flying Game" />
     <meta property="og:description" content="Play Flappy Bird online for free! Tap to fly through pipes. Addictive arcade game." />
@@ -16,7 +17,10 @@
     <meta name="twitter:title" content="Flappy Bird Online | Free Flying Game" />
     <meta name="twitter:description" content="Play Flappy Bird online for free! Tap to fly through pipes." />
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"VideoGame","name":"Flappy Bird","description":"Tap to fly through pipes arcade game","genre":"Arcade","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Flappy Bird","description":"Tap to fly through pipes arcade game","genre":"Arcade","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","url":"https://game.wookingwoo.com/games/flappy-bird/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://game.wookingwoo.com/"},{"@type":"ListItem","position":2,"name":"Flappy Bird","item":"https://game.wookingwoo.com/games/flappy-bird/"}]}
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -39,22 +43,22 @@
 
         <div class="canvas-container">
             <canvas id="gameCanvas" width="400" height="600"></canvas>
-            
+
             <div id="startScreen" class="overlay-screen">
                 <h2>🐦 Flappy Bird</h2>
-                <p>스페이스바 또는 클릭으로 점프!</p>
-                <button onclick="startGame()">시작하기</button>
+                <p>Press Space or click to jump!</p>
+                <button onclick="startGame()">Start</button>
             </div>
 
             <div id="gameOverScreen" class="overlay-screen hidden">
                 <h2>Game Over</h2>
-                <p>점수: <span id="finalScore">0</span></p>
-                <button onclick="restartGame()">다시 하기</button>
+                <p>Score: <span id="finalScore">0</span></p>
+                <button onclick="restartGame()">Play Again</button>
             </div>
         </div>
 
         <div class="instructions">
-            <p>⌨️ 스페이스바 / 🖱️ 클릭 / 📱 터치로 점프</p>
+            <p>⌨️ Space / 🖱️ Click / 📱 Tap to jump</p>
         </div>
     </div>
 

@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors | Mini Game Collection</title>
-    <meta name="description" content="Challenge the AI in the classic game of Rock Paper Scissors! Track your wins and beat the computer." />
+    <title>Rock Paper Scissors Online | Free vs AI Game | Mini Game Collection</title>
+    <meta name="description" content="Challenge the AI in the classic game of Rock Paper Scissors! Track your wins, streak, and beat the computer. Free online game." />
+    <meta name="keywords" content="rock paper scissors, rps game, rock paper scissors online, vs AI game, hand game, free online game" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a1a2e" />
     <link rel="canonical" href="https://game.wookingwoo.com/games/rock-paper-scissors/" />
-    <meta property="og:title" content="Rock Paper Scissors | Mini Game Collection" />
+    <meta property="og:title" content="Rock Paper Scissors Online | Free vs AI Game" />
     <meta property="og:description" content="Challenge the AI in the classic game of Rock Paper Scissors! Track your wins and beat the computer." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://game.wookingwoo.com/games/rock-paper-scissors/" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Rock Paper Scissors | Mini Game Collection" />
+    <meta name="twitter:title" content="Rock Paper Scissors Online | Free vs AI Game" />
     <meta name="twitter:description" content="Challenge the AI in the classic game of Rock Paper Scissors! Track your wins and beat the computer." />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Rock Paper Scissors","description":"Classic hand game against an AI opponent","genre":"Strategy","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","url":"https://game.wookingwoo.com/games/rock-paper-scissors/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://game.wookingwoo.com/"},{"@type":"ListItem","position":2,"name":"Rock Paper Scissors","item":"https://game.wookingwoo.com/games/rock-paper-scissors/"}]}
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,7 +31,6 @@
             <p class="subtitle">VS AI</p>
         </div>
 
-        <!-- 점수판 -->
         <div class="scoreboard">
             <div class="score-box player-score">
                 <span class="score-label">YOU</span>
@@ -38,15 +46,12 @@
             </div>
         </div>
 
-        <!-- 최고 연승 기록 -->
         <div class="best-streak">
             <span>🔥 Best Streak: <strong id="bestStreak">0</strong></span>
             <span class="current-streak">Current: <strong id="currentStreak">0</strong></span>
         </div>
 
-        <!-- 게임 영역 -->
         <div class="game-area">
-            <!-- 선택 표시 영역 -->
             <div class="battle-area">
                 <div class="choice-display player-choice">
                     <span class="choice-emoji" id="playerChoiceEmoji">❓</span>
@@ -59,18 +64,15 @@
                 </div>
             </div>
 
-            <!-- 결과 표시 -->
             <div class="result-display hidden" id="resultDisplay">
                 <span class="result-text" id="resultText"></span>
             </div>
 
-            <!-- 카운트다운 -->
             <div class="countdown hidden" id="countdown">
                 <span class="countdown-text" id="countdownText"></span>
             </div>
         </div>
 
-        <!-- 선택 버튼 -->
         <div class="choices">
             <button class="choice-btn" data-choice="rock" onclick="playRound('rock')">
                 <span class="btn-emoji">✊</span>
@@ -86,7 +88,6 @@
             </button>
         </div>
 
-        <!-- 게임 히스토리 -->
         <div class="history-section">
             <span class="history-label">Recent:</span>
             <div class="history-items" id="historyItems">
@@ -94,7 +95,6 @@
             </div>
         </div>
 
-        <!-- 컨트롤 버튼 -->
         <div class="game-controls">
             <button class="control-btn reset" onclick="resetGame()">🔄 Reset Game</button>
         </div>

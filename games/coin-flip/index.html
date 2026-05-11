@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
     <meta name="description" content="Flip a coin online! Heads or tails betting game with animations. Track your win streak and statistics. Free random coin flipper." />
     <meta name="keywords" content="coin flip, coin toss, heads or tails, random coin, flip a coin, betting game, luck game, decision maker" />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a1a2e" />
     <link rel="canonical" href="https://game.wookingwoo.com/games/coin-flip/" />
     <meta property="og:title" content="Coin Flip Online | Heads or Tails" />
     <meta property="og:description" content="Flip a coin online! Heads or tails betting game with animations." />
@@ -16,15 +17,18 @@
     <meta name="twitter:title" content="Coin Flip Online | Heads or Tails" />
     <meta name="twitter:description" content="Flip a coin online! Free random coin flipper." />
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"VideoGame","name":"Coin Flip","description":"Heads or tails betting game","genre":"Casual","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Coin Flip","description":"Heads or tails betting game","genre":"Casual","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","url":"https://game.wookingwoo.com/games/coin-flip/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://game.wookingwoo.com/"},{"@type":"ListItem","position":2,"name":"Coin Flip","item":"https://game.wookingwoo.com/games/coin-flip/"}]}
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-container">
         <div class="game-header">
-            <h1>🪙 동전 던지기</h1>
-            <p class="subtitle">COIN FLIP</p>
+            <h1>🪙 COIN FLIP</h1>
+            <p class="subtitle">Heads or Tails?</p>
         </div>
 
         <div class="game-info">
@@ -48,7 +52,7 @@
         <div id="result" class="result"></div>
 
         <div class="bet-section">
-            <p class="bet-label">배팅 금액</p>
+            <p class="bet-label">Bet Amount</p>
             <div class="bet-buttons">
                 <button class="bet-btn" data-bet="10">10</button>
                 <button class="bet-btn active" data-bet="25">25</button>
@@ -58,30 +62,30 @@
         </div>
 
         <div class="choice-section">
-            <p class="choice-label">예측을 선택하세요</p>
+            <p class="choice-label">Choose your prediction</p>
             <div class="choice-buttons">
                 <button class="choice-btn heads" onclick="flipCoin('heads')">
                     <span class="choice-icon">👑</span>
-                    <span class="choice-text">앞면</span>
+                    <span class="choice-text">Heads</span>
                 </button>
                 <button class="choice-btn tails" onclick="flipCoin('tails')">
                     <span class="choice-icon">🌙</span>
-                    <span class="choice-text">뒷면</span>
+                    <span class="choice-text">Tails</span>
                 </button>
             </div>
         </div>
 
         <div class="stats">
-            <div class="stat">앞면: <span id="headsCount">0</span></div>
-            <div class="stat">뒷면: <span id="tailsCount">0</span></div>
-            <div class="stat">승률: <span id="winRate">0</span>%</div>
+            <div class="stat">Heads: <span id="headsCount">0</span></div>
+            <div class="stat">Tails: <span id="tailsCount">0</span></div>
+            <div class="stat">Win Rate: <span id="winRate">0</span>%</div>
         </div>
 
         <div id="gameOverOverlay" class="overlay hidden">
             <div class="overlay-content">
-                <h2>💸 파산!</h2>
-                <p>코인이 모두 소진되었습니다.</p>
-                <button onclick="resetGame()">다시 시작</button>
+                <h2>💸 Bankrupt!</h2>
+                <p>You ran out of coins.</p>
+                <button onclick="resetGame()">Play Again</button>
             </div>
         </div>
     </div>
