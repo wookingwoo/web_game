@@ -14,13 +14,29 @@ All games run directly in the browser with no installation or login required. Th
 - [Snake](https://game.wookingwoo.com/games/snake/): Classic snake game with neon visuals and difficulty selection
 - [Archery](https://game.wookingwoo.com/games/archery/): Draw a bow and hit targets with precision
 - [Shooting Gallery](https://game.wookingwoo.com/games/shooting-gallery/): Arcade-style target shooting game
+- [Rock Paper Scissors](https://game.wookingwoo.com/games/rock-paper-scissors/): Challenge the AI in the classic game
 - [Slot Machine](https://game.wookingwoo.com/games/slot-machine/): Classic casino slot machine with spinning reels and jackpot rewards
+- [Flappy Bird](https://game.wookingwoo.com/games/flappy-bird/): Fly through pipes by tapping to flap and survive
+- [Breakout](https://game.wookingwoo.com/games/breakout/): Break all the bricks with your ball and paddle
+- [Whack-a-Mole](https://game.wookingwoo.com/games/whack-a-mole/): Whack the moles as they pop up, avoid the bombs
+- [Fruit Ninja](https://game.wookingwoo.com/games/fruit-ninja/): Slice fruits by swiping, avoid the bombs
+- [Coin Flip](https://game.wookingwoo.com/games/coin-flip/): Flip a coin and bet on heads or tails
+- [Dice Roll](https://game.wookingwoo.com/games/dice-roll/): Roll dice and bet on the outcome
 
 ## Puzzle Games
 
 - [Memory Match](https://game.wookingwoo.com/games/memory-match/): Flip cards and find all matching pairs
 - [Typing Speed Race](https://game.wookingwoo.com/games/typing-speed-race/): Test typing speed and accuracy under time pressure
 - [Tetris](https://game.wookingwoo.com/games/tetris/): Stack falling blocks and clear lines
+- [2048](https://game.wookingwoo.com/games/2048/): Combine numbered tiles to reach 2048
+- [Minesweeper](https://game.wookingwoo.com/games/minesweeper/): Classic minesweeper with 3 difficulty levels
+- [Sudoku](https://game.wookingwoo.com/games/sudoku/): Fill the 9x9 grid with numbers 1-9
+- [Reaction Time](https://game.wookingwoo.com/games/reaction-time/): Test your reaction speed when the screen turns green
+- [Color Match](https://game.wookingwoo.com/games/color-match/): Match the color of the text, not the word (Stroop test)
+- [Simon Says](https://game.wookingwoo.com/games/simon-says/): Memory game - watch the pattern and repeat it
+- [Number Guessing](https://game.wookingwoo.com/games/number-guessing/): Guess the number between 1-100 (Up and Down game)
+- [Hangman](https://game.wookingwoo.com/games/hangman/): Guess the word before the hangman is complete
+- [Tic-Tac-Toe](https://game.wookingwoo.com/games/tic-tac-toe/): Classic 3x3 game with AI opponent
 
 ## Creative / Music
 

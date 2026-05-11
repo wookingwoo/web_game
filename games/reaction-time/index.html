@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Time Test Online | Speed Test | Mini Game Collection</title>
+    <meta name="description" content="Test your reaction time online! Measure how fast you can click when the screen turns green. Average, best scores tracked. Free reflex test." />
+    <meta name="keywords" content="reaction time test, reaction speed, reflex test, speed test, click speed, response time, human benchmark" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://game.wookingwoo.com/games/reaction-time/" />
+    <meta property="og:title" content="Reaction Time Test Online | Speed Test" />
+    <meta property="og:description" content="Test your reaction time online! Measure how fast you can click." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://game.wookingwoo.com/games/reaction-time/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Reaction Time Test Online | Speed Test" />
+    <meta name="twitter:description" content="Test your reaction time online! Free reflex speed test." />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Reaction Time Test","description":"Test your reaction speed","genre":"Skill","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>⚡ 반응속도 테스트</h1>
+            <p class="subtitle">REACTION TIME TEST</p>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <span class="stat-label">최고 기록</span>
+                <span id="bestTime" class="stat-value">- ms</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">평균</span>
+                <span id="avgTime" class="stat-value">- ms</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">시도</span>
+                <span id="attempts" class="stat-value">0/5</span>
+            </div>
+        </div>
+
+        <div id="gameArea" class="game-area waiting">
+            <div class="game-content">
+                <div id="icon" class="icon">🎯</div>
+                <h2 id="message">클릭하여 시작</h2>
+                <p id="subMessage">화면이 초록색으로 바뀌면 최대한 빨리 클릭하세요!</p>
+            </div>
+        </div>
+
+        <div class="results-container hidden" id="resultsContainer">
+            <h3>📊 결과</h3>
+            <div id="resultsList" class="results-list"></div>
+            <div class="final-result">
+                <p>평균 반응속도: <span id="finalAvg">0</span>ms</p>
+                <p id="ranking"></p>
+            </div>
+            <button class="restart-btn" onclick="resetGame()">다시 테스트</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

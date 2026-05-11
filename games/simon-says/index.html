@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Says Game Online | Memory Pattern Game | Mini Game Collection</title>
+    <meta name="description" content="Play Simon Says online for free! Test your memory by repeating color patterns. Classic electronic memory game with sounds." />
+    <meta name="keywords" content="simon says, simon game, memory game, pattern game, brain training, concentration game, free online game" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://game.wookingwoo.com/games/simon-says/" />
+    <meta property="og:title" content="Simon Says Game Online | Memory Pattern Game" />
+    <meta property="og:description" content="Play Simon Says online for free! Test your memory by repeating color patterns." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://game.wookingwoo.com/games/simon-says/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Simon Says Game Online | Memory Pattern Game" />
+    <meta name="twitter:description" content="Play Simon Says online for free! Classic memory pattern game." />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Simon Says","description":"Classic electronic memory pattern game","genre":"Puzzle","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🧠 사이먼</h1>
+            <p class="subtitle">SIMON SAYS</p>
+        </div>
+
+        <div class="game-info">
+            <div class="info-box">
+                <span class="info-label">LEVEL</span>
+                <span id="level" class="info-value">0</span>
+            </div>
+            <div class="info-box">
+                <span class="info-label">BEST</span>
+                <span id="bestLevel" class="info-value">0</span>
+            </div>
+        </div>
+
+        <div id="status" class="status">시작 버튼을 누르세요</div>
+
+        <div class="simon-board">
+            <div class="simon-btn" id="btn-green" data-color="green"></div>
+            <div class="simon-btn" id="btn-red" data-color="red"></div>
+            <div class="simon-btn" id="btn-yellow" data-color="yellow"></div>
+            <div class="simon-btn" id="btn-blue" data-color="blue"></div>
+            <div class="center-circle">
+                <span id="levelDisplay">0</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn" class="control-btn" onclick="startGame()">🎮 게임 시작</button>
+        </div>
+
+        <div class="instructions">
+            <p>패턴을 기억하고 순서대로 클릭하세요!</p>
+        </div>
+
+        <div id="gameOverOverlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h2>😢 게임 오버</h2>
+                <p>도달 레벨: <span id="finalLevel">0</span></p>
+                <p id="newRecord" class="hidden">🏆 새로운 기록!</p>
+                <button onclick="startGame()">다시 하기</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

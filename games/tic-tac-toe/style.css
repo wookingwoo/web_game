@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 450px;
+    width: 100%;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-header h1 {
+    font-size: 2.5rem;
+    color: #f1c40f;
+    text-shadow: 0 0 20px rgba(241, 196, 15, 0.5);
+}
+
+.game-header .subtitle {
+    color: #ecf0f1;
+    font-size: 1rem;
+    margin-top: 5px;
+    letter-spacing: 3px;
+}
+
+.mode-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.mode-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ecf0f1;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.mode-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.mode-btn.active {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    border-color: #9b59b6;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.player-info {
+    text-align: center;
+    flex: 1;
+}
+
+.player-symbol {
+    display: block;
+    font-size: 1.5rem;
+}
+
+.player-name {
+    display: block;
+    color: #95a5a6;
+    font-size: 0.8rem;
+}
+
+.player-score {
+    display: block;
+    color: #ecf0f1;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.player-info.active {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.status {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #ecf0f1;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cell:hover:not(.taken) {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.cell.taken {
+    cursor: not-allowed;
+}
+
+.cell.x {
+    color: #3498db;
+    text-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
+}
+
+.cell.o {
+    color: #e74c3c;
+    text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+}
+
+.cell.win {
+    animation: winPulse 0.5s ease infinite alternate;
+}
+
+@keyframes winPulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+.restart-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.restart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.difficulty-selector {
+    text-align: center;
+}
+
+.difficulty-selector p {
+    color: #95a5a6;
+    margin-bottom: 10px;
+}
+
+.difficulty-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.diff-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ecf0f1;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.diff-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.diff-btn.active {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    border-color: #27ae60;
+}
+
+.difficulty-selector.hidden {
+    display: none;
+}
+
+@media (max-width: 450px) {
+    .game-container {
+        padding: 15px;
+    }
+
+    .game-header h1 {
+        font-size: 2rem;
+    }
+
+    .cell {
+        font-size: 3rem;
+    }
+
+    .mode-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}

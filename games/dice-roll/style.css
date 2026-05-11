@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 450px;
+    width: 100%;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-header h1 {
+    font-size: 2.5rem;
+    color: #e74c3c;
+    text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+}
+
+.game-header .subtitle {
+    color: #ecf0f1;
+    font-size: 1rem;
+    margin-top: 5px;
+    letter-spacing: 3px;
+}
+
+.game-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.info-box {
+    text-align: center;
+}
+
+.info-label {
+    display: block;
+    color: #95a5a6;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.info-value {
+    display: block;
+    color: #f1c40f;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.dice-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.dice {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s ease;
+}
+
+.dice.rolling {
+    animation: roll 0.5s ease infinite;
+}
+
+@keyframes roll {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(10deg) scale(1.1); }
+    50% { transform: rotate(-5deg) scale(0.95); }
+    75% { transform: rotate(5deg) scale(1.05); }
+}
+
+.dice-face {
+    font-size: 3.5rem;
+}
+
+.result {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    min-height: 35px;
+    margin-bottom: 20px;
+    color: #ecf0f1;
+}
+
+.result.win {
+    color: #2ecc71;
+}
+
+.result.lose {
+    color: #e74c3c;
+}
+
+.bet-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bet-label {
+    color: #95a5a6;
+    margin-bottom: 10px;
+}
+
+.bet-label span {
+    color: #f1c40f;
+    font-weight: bold;
+}
+
+#betSlider {
+    width: 80%;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    -webkit-appearance: none;
+}
+
+#betSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f1c40f, #d4ac0d);
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.prediction-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.prediction-label {
+    color: #95a5a6;
+    margin-bottom: 15px;
+}
+
+.prediction-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.pred-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    min-width: 90px;
+}
+
+.pred-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.pred-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pred-title {
+    color: #ecf0f1;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.pred-range {
+    color: #95a5a6;
+    font-size: 0.8rem;
+}
+
+.pred-odds {
+    color: #2ecc71;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.roll-btn {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.roll-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(52, 152, 219, 0.5);
+}
+
+.roll-btn:disabled {
+    background: #7f8c8d;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.history {
+    text-align: center;
+}
+
+.history-label {
+    color: #95a5a6;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.history-list {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.history-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 12px;
+    border-radius: 15px;
+    color: #ecf0f1;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.history-item.low {
+    color: #3498db;
+}
+
+.history-item.seven {
+    color: #f1c40f;
+}
+
+.history-item.high {
+    color: #e74c3c;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay.hidden {
+    display: none;
+}
+
+.overlay-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.overlay-content h2 {
+    color: #e74c3c;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.overlay-content p {
+    color: #ecf0f1;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.overlay-content button {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.overlay-content button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(39, 174, 96, 0.5);
+}
+
+@media (max-width: 450px) {
+    .game-container {
+        padding: 15px;
+    }
+
+    .game-header h1 {
+        font-size: 2rem;
+    }
+
+    .dice {
+        width: 65px;
+        height: 65px;
+    }
+
+    .dice-face {
+        font-size: 2.8rem;
+    }
+
+    .pred-btn {
+        padding: 12px 15px;
+        min-width: 80px;
+    }
+}

@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 540px;
+    width: 100%;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-header h1 {
+    font-size: 2.5rem;
+    color: #e74c3c;
+    text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+}
+
+.game-header .subtitle {
+    color: #ecf0f1;
+    font-size: 1rem;
+    margin-top: 5px;
+    letter-spacing: 3px;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.info-box {
+    text-align: center;
+}
+
+.info-label {
+    display: block;
+    color: #95a5a6;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.info-value {
+    display: block;
+    color: #ecf0f1;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.canvas-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#gameCanvas {
+    border-radius: 10px;
+    background: #1a1a2e;
+    max-width: 100%;
+    height: auto;
+}
+
+.overlay-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.overlay-screen.hidden {
+    display: none;
+}
+
+.overlay-screen h2 {
+    color: #e74c3c;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.overlay-screen p {
+    color: #ecf0f1;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.overlay-screen button {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.overlay-screen button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(39, 174, 96, 0.5);
+}
+
+.instructions {
+    margin-top: 20px;
+    text-align: center;
+    color: #95a5a6;
+}
+
+.instructions p {
+    font-size: 1rem;
+}
+
+@media (max-width: 540px) {
+    .game-container {
+        padding: 15px;
+    }
+
+    .game-header h1 {
+        font-size: 2rem;
+    }
+
+    #gameCanvas {
+        width: 100%;
+        height: auto;
+    }
+}

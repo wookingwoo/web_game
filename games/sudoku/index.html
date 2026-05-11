@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Online | Free Puzzle Game | Mini Game Collection</title>
+    <meta name="description" content="Play Sudoku online for free! Classic 9x9 number puzzle with Easy, Medium, Hard levels. Hints available. No download required." />
+    <meta name="keywords" content="sudoku, sudoku online, sudoku puzzle, number puzzle, brain game, logic puzzle, free sudoku" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://game.wookingwoo.com/games/sudoku/" />
+    <meta property="og:title" content="Sudoku Online | Free Puzzle Game" />
+    <meta property="og:description" content="Play Sudoku online for free! Classic 9x9 number puzzle with multiple difficulty levels." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://game.wookingwoo.com/games/sudoku/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Sudoku Online | Free Puzzle Game" />
+    <meta name="twitter:description" content="Play Sudoku online for free! Classic 9x9 number puzzle." />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Sudoku","description":"Classic 9x9 number puzzle game","genre":"Puzzle","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🔢 스도쿠</h1>
+            <p class="subtitle">SUDOKU</p>
+        </div>
+
+        <div class="difficulty-selector">
+            <button class="diff-btn active" data-difficulty="easy">쉬움</button>
+            <button class="diff-btn" data-difficulty="medium">보통</button>
+            <button class="diff-btn" data-difficulty="hard">어려움</button>
+        </div>
+
+        <div class="game-info">
+            <div class="info-box">
+                <span class="info-icon">⏱️</span>
+                <span id="timer" class="info-value">00:00</span>
+            </div>
+            <div class="info-box">
+                <span class="info-icon">❌</span>
+                <span id="mistakes" class="info-value">0/3</span>
+            </div>
+        </div>
+
+        <div class="board-container">
+            <div id="gameBoard" class="game-board"></div>
+        </div>
+
+        <div class="number-pad">
+            <button class="num-btn" data-num="1">1</button>
+            <button class="num-btn" data-num="2">2</button>
+            <button class="num-btn" data-num="3">3</button>
+            <button class="num-btn" data-num="4">4</button>
+            <button class="num-btn" data-num="5">5</button>
+            <button class="num-btn" data-num="6">6</button>
+            <button class="num-btn" data-num="7">7</button>
+            <button class="num-btn" data-num="8">8</button>
+            <button class="num-btn" data-num="9">9</button>
+            <button class="num-btn erase" data-num="0">⌫</button>
+        </div>
+
+        <div class="controls">
+            <button class="control-btn" onclick="newGame()">🔄 새 게임</button>
+            <button class="control-btn hint-btn" onclick="getHint()">💡 힌트</button>
+        </div>
+
+        <div id="winOverlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h2>🎉 축하합니다!</h2>
+                <p>퍼즐을 완성했습니다!</p>
+                <p>시간: <span id="finalTime">00:00</span></p>
+                <button onclick="newGame()">새 게임</button>
+            </div>
+        </div>
+
+        <div id="gameOverOverlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h2>😢 게임 오버</h2>
+                <p>3번 실수했습니다!</p>
+                <button onclick="newGame()">다시 하기</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

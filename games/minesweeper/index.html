@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper Online | Free Classic Game | Mini Game Collection</title>
+    <meta name="description" content="Play Minesweeper online for free! Classic mine-finding puzzle with Easy, Medium, Hard modes. No download. Works on mobile & desktop." />
+    <meta name="keywords" content="minesweeper, minesweeper online, mine sweeper game, free puzzle game, logic game, classic windows game" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://game.wookingwoo.com/games/minesweeper/" />
+    <meta property="og:title" content="Minesweeper Online | Free Classic Game" />
+    <meta property="og:description" content="Play Minesweeper online for free! Classic mine-finding puzzle with multiple difficulty levels." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://game.wookingwoo.com/games/minesweeper/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Minesweeper Online | Free Classic Game" />
+    <meta name="twitter:description" content="Play Minesweeper online for free! Classic mine-finding puzzle game." />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Minesweeper","description":"Classic mine-finding puzzle game","genre":"Puzzle","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>💣 지뢰찾기</h1>
+            <p class="subtitle">MINESWEEPER</p>
+        </div>
+
+        <div class="difficulty-selector">
+            <button class="diff-btn active" data-difficulty="easy">쉬움 (9x9)</button>
+            <button class="diff-btn" data-difficulty="medium">보통 (16x16)</button>
+            <button class="diff-btn" data-difficulty="hard">어려움 (30x16)</button>
+        </div>
+
+        <div class="game-info">
+            <div class="info-box">
+                <span class="info-icon">💣</span>
+                <span id="mineCount" class="info-value">10</span>
+            </div>
+            <div class="info-box">
+                <span id="gameStatus" class="status-icon">😊</span>
+            </div>
+            <div class="info-box">
+                <span class="info-icon">⏱️</span>
+                <span id="timer" class="info-value">000</span>
+            </div>
+        </div>
+
+        <div class="board-container">
+            <div id="gameBoard" class="game-board"></div>
+        </div>
+
+        <div class="controls">
+            <button class="control-btn" onclick="resetGame()">🔄 새 게임</button>
+        </div>
+
+        <div class="instructions">
+            <h3>조작법</h3>
+            <p>🖱️ 좌클릭: 셀 열기</p>
+            <p>🖱️ 우클릭: 깃발 표시</p>
+            <p>📱 길게 터치: 깃발 표시</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

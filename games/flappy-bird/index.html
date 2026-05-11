@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird Online | Free Flying Game | Mini Game Collection</title>
+    <meta name="description" content="Play Flappy Bird online for free! Tap to fly through pipes. Addictive arcade game. No download required. Play on mobile & desktop." />
+    <meta name="keywords" content="flappy bird, flappy bird online, flying game, arcade game, tap game, free online game, mobile game" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://game.wookingwoo.com/games/flappy-bird/" />
+    <meta property="og:title" content="Flappy Bird Online | Free Flying Game" />
+    <meta property="og:description" content="Play Flappy Bird online for free! Tap to fly through pipes. Addictive arcade game." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://game.wookingwoo.com/games/flappy-bird/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Flappy Bird Online | Free Flying Game" />
+    <meta name="twitter:description" content="Play Flappy Bird online for free! Tap to fly through pipes." />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Flappy Bird","description":"Tap to fly through pipes arcade game","genre":"Arcade","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🐦 Flappy Bird</h1>
+        </div>
+
+        <div class="score-display">
+            <div class="score-box">
+                <span class="score-label">SCORE</span>
+                <span id="score" class="score-value">0</span>
+            </div>
+            <div class="score-box">
+                <span class="score-label">BEST</span>
+                <span id="bestScore" class="score-value">0</span>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="gameCanvas" width="400" height="600"></canvas>
+            
+            <div id="startScreen" class="overlay-screen">
+                <h2>🐦 Flappy Bird</h2>
+                <p>스페이스바 또는 클릭으로 점프!</p>
+                <button onclick="startGame()">시작하기</button>
+            </div>
+
+            <div id="gameOverScreen" class="overlay-screen hidden">
+                <h2>Game Over</h2>
+                <p>점수: <span id="finalScore">0</span></p>
+                <button onclick="restartGame()">다시 하기</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <p>⌨️ 스페이스바 / 🖱️ 클릭 / 📱 터치로 점프</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

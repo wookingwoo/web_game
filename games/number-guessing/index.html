@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game | Up Down Game | Mini Game Collection</title>
+    <meta name="description" content="Play Number Guessing online! Guess the secret number 1-100 with hints. Up and down game. Track your best attempts. Free logic game." />
+    <meta name="keywords" content="number guessing, up down game, guess the number, higher lower, logic game, number game, free online game" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://game.wookingwoo.com/games/number-guessing/" />
+    <meta property="og:title" content="Number Guessing Game | Up Down Game" />
+    <meta property="og:description" content="Play Number Guessing online! Guess the secret number 1-100 with hints." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://game.wookingwoo.com/games/number-guessing/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Number Guessing Game | Up Down Game" />
+    <meta name="twitter:description" content="Play Number Guessing online! Free logic game." />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Number Guessing","description":"Guess the number with up/down hints","genre":"Puzzle","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🔢 업다운</h1>
+            <p class="subtitle">NUMBER GUESSING</p>
+        </div>
+
+        <div class="game-info">
+            <div class="info-box">
+                <span class="info-label">시도</span>
+                <span id="attempts" class="info-value">0</span>
+            </div>
+            <div class="info-box">
+                <span class="info-label">범위</span>
+                <span id="range" class="info-value">1-100</span>
+            </div>
+            <div class="info-box">
+                <span class="info-label">최고기록</span>
+                <span id="bestScore" class="info-value">-</span>
+            </div>
+        </div>
+
+        <div id="hint" class="hint">1~100 사이의 숫자를 맞춰보세요!</div>
+
+        <div class="guess-history" id="guessHistory"></div>
+
+        <div class="input-section">
+            <input type="number" id="guessInput" min="1" max="100" placeholder="숫자 입력">
+            <button id="guessBtn" onclick="makeGuess()">확인</button>
+        </div>
+
+        <div class="number-pad">
+            <button class="num-btn" onclick="appendNumber(1)">1</button>
+            <button class="num-btn" onclick="appendNumber(2)">2</button>
+            <button class="num-btn" onclick="appendNumber(3)">3</button>
+            <button class="num-btn" onclick="appendNumber(4)">4</button>
+            <button class="num-btn" onclick="appendNumber(5)">5</button>
+            <button class="num-btn" onclick="appendNumber(6)">6</button>
+            <button class="num-btn" onclick="appendNumber(7)">7</button>
+            <button class="num-btn" onclick="appendNumber(8)">8</button>
+            <button class="num-btn" onclick="appendNumber(9)">9</button>
+            <button class="num-btn clear" onclick="clearInput()">C</button>
+            <button class="num-btn" onclick="appendNumber(0)">0</button>
+            <button class="num-btn enter" onclick="makeGuess()">⏎</button>
+        </div>
+
+        <button class="restart-btn" onclick="resetGame()">🔄 새 게임</button>
+
+        <div id="winOverlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h2>🎉 정답!</h2>
+                <p>숫자는 <span id="answer">0</span>이었습니다!</p>
+                <p><span id="finalAttempts">0</span>번 만에 맞추셨습니다!</p>
+                <p id="newRecord" class="hidden">🏆 새로운 기록!</p>
+                <button onclick="resetGame()">다시 하기</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

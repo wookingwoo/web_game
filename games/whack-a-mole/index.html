@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-a-Mole Online | Free Arcade Game | Mini Game Collection</title>
+    <meta name="description" content="Play Whack-a-Mole online for free! Hit the moles as they pop up. Avoid the bombs. Classic arcade game with high score tracking." />
+    <meta name="keywords" content="whack a mole, whack-a-mole, arcade game, reflex game, reaction game, free online game, tap game" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://game.wookingwoo.com/games/whack-a-mole/" />
+    <meta property="og:title" content="Whack-a-Mole Online | Free Arcade Game" />
+    <meta property="og:description" content="Play Whack-a-Mole online for free! Hit the moles as they pop up." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://game.wookingwoo.com/games/whack-a-mole/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Whack-a-Mole Online | Free Arcade Game" />
+    <meta name="twitter:description" content="Play Whack-a-Mole online for free! Classic arcade game." />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Whack-a-Mole","description":"Classic arcade game - hit the moles","genre":"Arcade","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🔨 두더지 잡기</h1>
+            <p class="subtitle">WHACK-A-MOLE</p>
+        </div>
+
+        <div class="game-info">
+            <div class="info-box">
+                <span class="info-label">SCORE</span>
+                <span id="score" class="info-value">0</span>
+            </div>
+            <div class="info-box">
+                <span class="info-label">TIME</span>
+                <span id="timer" class="info-value">30</span>
+            </div>
+            <div class="info-box">
+                <span class="info-label">BEST</span>
+                <span id="bestScore" class="info-value">0</span>
+            </div>
+        </div>
+
+        <div class="game-board" id="gameBoard">
+            <div class="hole" data-hole="0"><div class="mole">🐹</div></div>
+            <div class="hole" data-hole="1"><div class="mole">🐹</div></div>
+            <div class="hole" data-hole="2"><div class="mole">🐹</div></div>
+            <div class="hole" data-hole="3"><div class="mole">🐹</div></div>
+            <div class="hole" data-hole="4"><div class="mole">🐹</div></div>
+            <div class="hole" data-hole="5"><div class="mole">🐹</div></div>
+            <div class="hole" data-hole="6"><div class="mole">🐹</div></div>
+            <div class="hole" data-hole="7"><div class="mole">🐹</div></div>
+            <div class="hole" data-hole="8"><div class="mole">🐹</div></div>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn" class="control-btn" onclick="startGame()">🎮 게임 시작</button>
+        </div>
+
+        <div class="instructions">
+            <p>두더지가 올라오면 빠르게 클릭하세요!</p>
+            <p>⚠️ 폭탄(💣)은 피하세요! -10점</p>
+        </div>
+
+        <div id="resultOverlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h2>🎉 게임 종료!</h2>
+                <p>최종 점수: <span id="finalScore">0</span></p>
+                <p id="newRecord" class="hidden">🏆 새로운 기록!</p>
+                <button onclick="startGame()">다시 하기</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

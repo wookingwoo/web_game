@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakout Game Online | Brick Breaker | Mini Game Collection</title>
+    <meta name="description" content="Play Breakout online for free! Classic brick breaker arcade game. Destroy all bricks with ball and paddle. Multiple levels." />
+    <meta name="keywords" content="breakout, brick breaker, arkanoid, arcade game, ball game, paddle game, free online game" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://game.wookingwoo.com/games/breakout/" />
+    <meta property="og:title" content="Breakout Game Online | Brick Breaker" />
+    <meta property="og:description" content="Play Breakout online for free! Classic brick breaker arcade game with multiple levels." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://game.wookingwoo.com/games/breakout/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Breakout Game Online | Brick Breaker" />
+    <meta name="twitter:description" content="Play Breakout online for free! Classic brick breaker arcade game." />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Breakout","description":"Classic brick breaker arcade game","genre":"Arcade","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🧱 벽돌깨기</h1>
+            <p class="subtitle">BREAKOUT</p>
+        </div>
+
+        <div class="game-info">
+            <div class="info-box">
+                <span class="info-label">SCORE</span>
+                <span id="score" class="info-value">0</span>
+            </div>
+            <div class="info-box">
+                <span class="info-label">LEVEL</span>
+                <span id="level" class="info-value">1</span>
+            </div>
+            <div class="info-box">
+                <span class="info-label">LIVES</span>
+                <span id="lives" class="info-value">❤️❤️❤️</span>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="gameCanvas" width="480" height="600"></canvas>
+            
+            <div id="startScreen" class="overlay-screen">
+                <h2>🧱 벽돌깨기</h2>
+                <p>마우스 또는 방향키로 패들 조작</p>
+                <button onclick="startGame()">시작하기</button>
+            </div>
+
+            <div id="gameOverScreen" class="overlay-screen hidden">
+                <h2>Game Over</h2>
+                <p>최종 점수: <span id="finalScore">0</span></p>
+                <button onclick="restartGame()">다시 하기</button>
+            </div>
+
+            <div id="winScreen" class="overlay-screen hidden">
+                <h2>🎉 클리어!</h2>
+                <p>레벨 <span id="clearedLevel">1</span> 클리어!</p>
+                <button onclick="nextLevel()">다음 레벨</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <p>🖱️ 마우스 / ⬅️➡️ 방향키로 패들 이동</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

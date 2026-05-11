@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roll Online | Free Dice Game | Mini Game Collection</title>
+    <meta name="description" content="Roll dice online! Two dice betting game with animations. Predict high, low, or lucky 7. Track your results. Free virtual dice roller." />
+    <meta name="keywords" content="dice roll, dice game, roll dice online, virtual dice, dice roller, betting game, craps, board game dice" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://game.wookingwoo.com/games/dice-roll/" />
+    <meta property="og:title" content="Dice Roll Online | Free Dice Game" />
+    <meta property="og:description" content="Roll dice online! Two dice betting game with animations." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://game.wookingwoo.com/games/dice-roll/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Dice Roll Online | Free Dice Game" />
+    <meta name="twitter:description" content="Roll dice online! Free virtual dice roller." />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Dice Roll","description":"Virtual dice rolling betting game","genre":"Casual","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🎲 주사위</h1>
+            <p class="subtitle">DICE ROLL</p>
+        </div>
+
+        <div class="game-info">
+            <div class="info-box">
+                <span class="info-label">COINS</span>
+                <span id="coins" class="info-value">100</span>
+            </div>
+            <div class="info-box">
+                <span class="info-label">TOTAL</span>
+                <span id="total" class="info-value">-</span>
+            </div>
+        </div>
+
+        <div class="dice-container">
+            <div id="dice1" class="dice">
+                <div class="dice-face">⚀</div>
+            </div>
+            <div id="dice2" class="dice">
+                <div class="dice-face">⚀</div>
+            </div>
+        </div>
+
+        <div id="result" class="result"></div>
+
+        <div class="bet-section">
+            <p class="bet-label">배팅 금액: <span id="betAmount">10</span></p>
+            <input type="range" id="betSlider" min="10" max="100" value="10" step="10">
+        </div>
+
+        <div class="prediction-section">
+            <p class="prediction-label">합계 예측</p>
+            <div class="prediction-buttons">
+                <button class="pred-btn" onclick="placeBet('low')">
+                    <span class="pred-title">낮음</span>
+                    <span class="pred-range">2-6</span>
+                    <span class="pred-odds">x2</span>
+                </button>
+                <button class="pred-btn" onclick="placeBet('seven')">
+                    <span class="pred-title">7</span>
+                    <span class="pred-range">정확히 7</span>
+                    <span class="pred-odds">x4</span>
+                </button>
+                <button class="pred-btn" onclick="placeBet('high')">
+                    <span class="pred-title">높음</span>
+                    <span class="pred-range">8-12</span>
+                    <span class="pred-odds">x2</span>
+                </button>
+            </div>
+        </div>
+
+        <button class="roll-btn" onclick="rollDice()">🎲 그냥 굴리기</button>
+
+        <div class="history">
+            <p class="history-label">최근 결과</p>
+            <div id="historyList" class="history-list"></div>
+        </div>
+
+        <div id="gameOverOverlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h2>💸 파산!</h2>
+                <p>코인이 모두 소진되었습니다.</p>
+                <button onclick="resetGame()">다시 시작</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

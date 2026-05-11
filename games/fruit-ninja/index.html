@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Ninja Online | Fruit Slicing Game | Mini Game Collection</title>
+    <meta name="description" content="Play Fruit Ninja online for free! Swipe to slice fruits, avoid bombs. Addictive fruit slicing arcade game. Touch or mouse controls." />
+    <meta name="keywords" content="fruit ninja, fruit slicing game, swipe game, arcade game, touch game, mobile game, free online game" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://game.wookingwoo.com/games/fruit-ninja/" />
+    <meta property="og:title" content="Fruit Ninja Online | Fruit Slicing Game" />
+    <meta property="og:description" content="Play Fruit Ninja online for free! Swipe to slice fruits, avoid bombs." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://game.wookingwoo.com/games/fruit-ninja/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Fruit Ninja Online | Fruit Slicing Game" />
+    <meta name="twitter:description" content="Play Fruit Ninja online for free! Swipe to slice fruits." />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Fruit Ninja","description":"Fruit slicing arcade game","genre":"Arcade","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🍉 과일 자르기</h1>
+            <p class="subtitle">FRUIT NINJA</p>
+        </div>
+
+        <div class="game-info">
+            <div class="info-box">
+                <span class="info-label">SCORE</span>
+                <span id="score" class="info-value">0</span>
+            </div>
+            <div class="info-box">
+                <span class="info-label">LIVES</span>
+                <span id="lives" class="info-value">❤️❤️❤️</span>
+            </div>
+            <div class="info-box">
+                <span class="info-label">BEST</span>
+                <span id="bestScore" class="info-value">0</span>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="gameCanvas" width="400" height="500"></canvas>
+            
+            <div id="startScreen" class="overlay-screen">
+                <h2>🍉 과일 자르기</h2>
+                <p>화면을 스와이프하여 과일을 자르세요!</p>
+                <p>⚠️ 폭탄은 피하세요!</p>
+                <button onclick="startGame()">시작하기</button>
+            </div>
+
+            <div id="gameOverScreen" class="overlay-screen hidden">
+                <h2>Game Over</h2>
+                <p>최종 점수: <span id="finalScore">0</span></p>
+                <button onclick="restartGame()">다시 하기</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <p>🖱️ 드래그하여 과일 자르기 / 💣 폭탄 피하기</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

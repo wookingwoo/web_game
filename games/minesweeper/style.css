@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 100%;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-header h1 {
+    font-size: 2.5rem;
+    color: #e74c3c;
+    text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+}
+
+.game-header .subtitle {
+    color: #ecf0f1;
+    font-size: 1rem;
+    margin-top: 5px;
+    letter-spacing: 3px;
+}
+
+.difficulty-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.diff-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ecf0f1;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.diff-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.diff-btn.active {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border-color: #e74c3c;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 auto 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.info-icon {
+    font-size: 1.2rem;
+}
+
+.info-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e74c3c;
+    font-family: 'Courier New', monospace;
+}
+
+.status-icon {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.board-container {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.game-board {
+    display: inline-grid;
+    gap: 2px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    background: linear-gradient(145deg, #4a5568, #2d3748);
+    border: 1px solid #1a202c;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.1s ease;
+}
+
+.cell:hover:not(.revealed) {
+    background: linear-gradient(145deg, #5a6578, #3d4758);
+}
+
+.cell.revealed {
+    background: #2d3748;
+    cursor: default;
+}
+
+.cell.mine {
+    background: #e74c3c;
+}
+
+.cell.flagged::before {
+    content: '🚩';
+}
+
+.cell.question::before {
+    content: '❓';
+}
+
+.cell[data-number="1"] { color: #3498db; }
+.cell[data-number="2"] { color: #27ae60; }
+.cell[data-number="3"] { color: #e74c3c; }
+.cell[data-number="4"] { color: #9b59b6; }
+.cell[data-number="5"] { color: #e67e22; }
+.cell[data-number="6"] { color: #1abc9c; }
+.cell[data-number="7"] { color: #34495e; }
+.cell[data-number="8"] { color: #95a5a6; }
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.control-btn {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.instructions {
+    margin-top: 20px;
+    text-align: center;
+    color: #95a5a6;
+}
+
+.instructions h3 {
+    color: #ecf0f1;
+    margin-bottom: 10px;
+}
+
+.instructions p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+@media (max-width: 600px) {
+    .game-container {
+        padding: 15px;
+    }
+
+    .game-header h1 {
+        font-size: 2rem;
+    }
+
+    .cell {
+        width: 25px;
+        height: 25px;
+        font-size: 0.8rem;
+    }
+
+    .diff-btn {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game Online | Word Guessing | Mini Game Collection</title>
+    <meta name="description" content="Play Hangman online for free! Guess the word letter by letter. Multiple categories. Classic word guessing game for all ages." />
+    <meta name="keywords" content="hangman, hangman game, word game, guessing game, vocabulary game, free online game, educational game" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://game.wookingwoo.com/games/hangman/" />
+    <meta property="og:title" content="Hangman Game Online | Word Guessing" />
+    <meta property="og:description" content="Play Hangman online for free! Guess the word letter by letter. Multiple categories." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://game.wookingwoo.com/games/hangman/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Hangman Game Online | Word Guessing" />
+    <meta name="twitter:description" content="Play Hangman online for free! Classic word guessing game." />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Hangman","description":"Classic word guessing game","genre":"Word Game","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>😵 행맨</h1>
+            <p class="subtitle">HANGMAN</p>
+        </div>
+
+        <div class="game-info">
+            <div class="info-box">
+                <span class="info-label">카테고리</span>
+                <span id="category" class="info-value">-</span>
+            </div>
+            <div class="info-box">
+                <span class="info-label">남은 기회</span>
+                <span id="lives" class="info-value">6</span>
+            </div>
+        </div>
+
+        <div class="hangman-area">
+            <svg id="hangman" viewBox="0 0 200 250" class="hangman-svg">
+                <!-- Base -->
+                <line x1="20" y1="230" x2="100" y2="230" stroke="#ecf0f1" stroke-width="4"/>
+                <!-- Pole -->
+                <line x1="60" y1="230" x2="60" y2="20" stroke="#ecf0f1" stroke-width="4"/>
+                <!-- Top -->
+                <line x1="60" y1="20" x2="140" y2="20" stroke="#ecf0f1" stroke-width="4"/>
+                <!-- Rope -->
+                <line x1="140" y1="20" x2="140" y2="50" stroke="#ecf0f1" stroke-width="4"/>
+                
+                <!-- Body parts (hidden by default) -->
+                <circle id="head" cx="140" cy="70" r="20" stroke="#e74c3c" stroke-width="4" fill="none" class="hidden"/>
+                <line id="body" x1="140" y1="90" x2="140" y2="150" stroke="#e74c3c" stroke-width="4" class="hidden"/>
+                <line id="leftArm" x1="140" y1="110" x2="110" y2="140" stroke="#e74c3c" stroke-width="4" class="hidden"/>
+                <line id="rightArm" x1="140" y1="110" x2="170" y2="140" stroke="#e74c3c" stroke-width="4" class="hidden"/>
+                <line id="leftLeg" x1="140" y1="150" x2="110" y2="200" stroke="#e74c3c" stroke-width="4" class="hidden"/>
+                <line id="rightLeg" x1="140" y1="150" x2="170" y2="200" stroke="#e74c3c" stroke-width="4" class="hidden"/>
+            </svg>
+        </div>
+
+        <div id="wordDisplay" class="word-display">_ _ _ _ _</div>
+
+        <div id="wrongLetters" class="wrong-letters"></div>
+
+        <div id="keyboard" class="keyboard">
+            <div class="keyboard-row">
+                <button class="key" data-letter="A">A</button>
+                <button class="key" data-letter="B">B</button>
+                <button class="key" data-letter="C">C</button>
+                <button class="key" data-letter="D">D</button>
+                <button class="key" data-letter="E">E</button>
+                <button class="key" data-letter="F">F</button>
+                <button class="key" data-letter="G">G</button>
+            </div>
+            <div class="keyboard-row">
+                <button class="key" data-letter="H">H</button>
+                <button class="key" data-letter="I">I</button>
+                <button class="key" data-letter="J">J</button>
+                <button class="key" data-letter="K">K</button>
+                <button class="key" data-letter="L">L</button>
+                <button class="key" data-letter="M">M</button>
+                <button class="key" data-letter="N">N</button>
+            </div>
+            <div class="keyboard-row">
+                <button class="key" data-letter="O">O</button>
+                <button class="key" data-letter="P">P</button>
+                <button class="key" data-letter="Q">Q</button>
+                <button class="key" data-letter="R">R</button>
+                <button class="key" data-letter="S">S</button>
+                <button class="key" data-letter="T">T</button>
+                <button class="key" data-letter="U">U</button>
+            </div>
+            <div class="keyboard-row">
+                <button class="key" data-letter="V">V</button>
+                <button class="key" data-letter="W">W</button>
+                <button class="key" data-letter="X">X</button>
+                <button class="key" data-letter="Y">Y</button>
+                <button class="key" data-letter="Z">Z</button>
+            </div>
+        </div>
+
+        <button class="restart-btn" onclick="startNewGame()">🔄 새 게임</button>
+
+        <div id="gameOverOverlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h2 id="resultTitle">😢 Game Over</h2>
+                <p>정답: <span id="correctWord">WORD</span></p>
+                <button onclick="startNewGame()">다시 하기</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

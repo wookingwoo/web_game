@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Match Game | Stroop Test Online | Mini Game Collection</title>
+    <meta name="description" content="Play Color Match online! Stroop effect brain game - match the color, not the word. Test your cognitive speed and focus. Free brain training." />
+    <meta name="keywords" content="color match, stroop test, stroop effect, brain game, cognitive test, focus game, brain training, free online game" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://game.wookingwoo.com/games/color-match/" />
+    <meta property="og:title" content="Color Match Game | Stroop Test Online" />
+    <meta property="og:description" content="Play Color Match online! Stroop effect brain game - match the color, not the word." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://game.wookingwoo.com/games/color-match/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Color Match Game | Stroop Test Online" />
+    <meta name="twitter:description" content="Play Color Match online! Stroop effect brain game." />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"VideoGame","name":"Color Match","description":"Stroop effect brain training game","genre":"Puzzle","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser"}
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🎨 컬러 매치</h1>
+            <p class="subtitle">COLOR MATCH</p>
+        </div>
+
+        <div class="game-info">
+            <div class="info-box">
+                <span class="info-label">SCORE</span>
+                <span id="score" class="info-value">0</span>
+            </div>
+            <div class="info-box">
+                <span class="info-label">TIME</span>
+                <span id="timer" class="info-value">30</span>
+            </div>
+            <div class="info-box">
+                <span class="info-label">BEST</span>
+                <span id="bestScore" class="info-value">0</span>
+            </div>
+        </div>
+
+        <div class="question-area">
+            <p class="instruction">글자의 <strong>색깔</strong>을 맞추세요!</p>
+            <div id="colorWord" class="color-word">빨강</div>
+        </div>
+
+        <div class="choices" id="choices">
+            <button class="choice-btn" data-color="red">빨강</button>
+            <button class="choice-btn" data-color="blue">파랑</button>
+            <button class="choice-btn" data-color="green">초록</button>
+            <button class="choice-btn" data-color="yellow">노랑</button>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn" class="control-btn" onclick="startGame()">🎮 게임 시작</button>
+        </div>
+
+        <div class="instructions">
+            <p>⚠️ 글자가 아닌 <strong>글자의 색깔</strong>을 선택하세요!</p>
+        </div>
+
+        <div id="resultOverlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h2>🎉 게임 종료!</h2>
+                <p>최종 점수: <span id="finalScore">0</span></p>
+                <p id="newRecord" class="hidden">🏆 새로운 기록!</p>
+                <button onclick="startGame()">다시 하기</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
